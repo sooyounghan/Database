@@ -86,7 +86,7 @@ FROM EMP;
   - null 값 : 의미가 없는 값, 저장할 값이 없는 것 (Oracle : 무한대를 의미)
 
   - null 값 처리 : NVL("값", "지정값") - NVL 함수는 값이 NULL인 경우 지정값을 출력, 아니라면 원래의 값 출력
-  - null 값 처리 : NVL2("값", "지정값1", "지정값2") - NVL 함수는 값이 NULL이 아니라면 지정값1을 출력, NULL이면 원래의 값 출력
+  - null 값 처리 : NVL2("값", "지정값1", "지정값2") - NVL 함수는 값이 NULL이 아니라면 지정값1을 출력, NULL이면 지정값2 출력
 
 ```sql
 SELECT SAL, NVL(COMM, 0), SAL + NVL(COMM, 0)
