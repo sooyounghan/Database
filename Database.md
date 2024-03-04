@@ -22,12 +22,21 @@
 ----
 1. 최종 사용자 또는 응용 프로그램이 데이터베이스에 접근할 수 있도록 도와주는 인터페이스 역할
 2. 저장된 데이터를 보다 체계적으로 관리하고 이용할 수 있도록 해주는 소프트웨어
-3. 이름, 값의 관계로 관리하는 데이터베이스
-   
+3. 이름, 값의 관계로 관리하는 데이터베이스 (TABLE의 집합)
+
+         Database 조회 : show databases;
+         사용할 Database 지정 : use Database_name;
+         Table 구조 조회 : desc[ribe] table_name;
 <div align = "center">
 <img src="https://github.com/sooyounghan/Web/assets/34672301/d44f70a5-aec5-47cb-a35e-0c8b98e6e5bb">
 </div>   
 
+      <기본 Schema>
+      - infomation_schema : mysql 서버의 테이블, 열, 제약조건, 권한 등 정보를 담고 있는 테이블들의 집합
+      - mysql : 사용자, 권한 등에 대한 정보를 가진 테이블들이 존재
+      - performance_schema : mysql 서버의 성능가 관련된 정보를 가진 테이블들이 존재
+      - sys : MYSQL 5.7 부터 추가 (information_schema와 performance_schema를 조합)
+      
 -----
 ### Structed Data
 ----
