@@ -23,13 +23,13 @@ FROM 테이블명
 SELECT *
 FROM TABLE_NAME;
 ```
-1. <DEPT> TABLE의 모든 정보를 가져옴
+1. < DEPT > TABLE의 모든 정보를 가져옴
 ```sql
 SELECT *
 FROM DEPT;
 ```
 
-2. <EMP> TABLE의 모든 정보를 가져옴
+2. < EMP > TABLE의 모든 정보를 가져옴
 ```sql
 SELECT *
 FROM EMP;
@@ -43,19 +43,19 @@ SELECT COL1, COL2(COL1과 COL2는 TABLE에 있는 COLUMN)
 FROM TABLE_NAME;
 ```
 
-1. <EMP> TABLE에서 사원의 이름과 사원 번호를 가져옴
+1. < EMP > TABLE에서 사원의 이름과 사원 번호를 가져옴
 ```sql
 SELECT ENAME, EMPNO
 FROM EMP;
 ```
 
-2. <EMP> TABLE에서 사원의 이름과 사원 번호, 직무, 급여를 가져옴
+2. < EMP > TABLE에서 사원의 이름과 사원 번호, 직무, 급여를 가져옴
 ```sql
 SELECT ENAME, EMPNO, JOB, SAL
 FROM EMP;
 ```
 
-3. <DEPT> TABLE에서 부서 번호와 부서 이름을 가져옴
+3. < DEPT > TABLE에서 부서 번호와 부서 이름을 가져옴
 ```sql
 SELECT DEPNO, DANME
 FROM DEPT;
