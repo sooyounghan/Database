@@ -126,5 +126,26 @@
 ----
 : INSERT, UPDATE, DELETE 문에 의해 수행된 변경 사항을 관리하는 데 사용 (ROLLBACK, COMMIT)
 
+-----
+### Data Dictionary = System Catalog
+-----
+1. 사용 가능한 데이터베이스 및 테이블의 정보를 가지고 있는 시스템 테이블
+2. DBMS만이 추가, 수정, 삭제만 가능
+3. 사용자는 조회만 가능
 
-   
+-----
+### 주석문 : --, /* */ 
+-----
+
+-----
+### 현재 접속한 데이터베이스 내의 Table 조회
+-----
+: SELECT * FROM tab;
+
+
+-----
+### 원하는 테이블의 구조를 조회
+-----
+: desc[ribe] table_name;
+
+
