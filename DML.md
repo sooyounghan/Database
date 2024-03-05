@@ -13,7 +13,11 @@ FROM 테이블명
 [HAVING 그룹조건]
 [ORDER BY 정렬 기준 정렬 방법];
 ```
-   
+
+<div align = "center">
+<img src="https://github.com/sooyounghan/Data-Structure/assets/34672301/7ce05962-a93d-4379-a93d-fb60058f5bf5">
+</div>
+
 -----
 ### SELECT - 모든 Column의 데이터 가져오기
 -----
@@ -116,3 +120,75 @@ FROM TABLE_NAME;
 SELECT DISTINCT DEPTNO
 FROM EMP;
 ```
+
+-----
+### 조건절과 비교 연산자
+-----
+1. 테이블 내 모든 Row에 대해 적용
+2. 어떤 조건에 맞는 Row에 대해서만 작업을 하고 싶을 때 조건절 이용
+3. 형태
+```sql
+SELECT column_name
+FROM table_name
+WHERE 조건절;
+```
+4. SELECT ~ FROM 까지 모든 ROW를 얻어온 뒤, 각 행을 조건절과 비교해서 참 값은 남겨두고, 거짓은 제거
+5. 비교 연산자
+   - < : lesser than
+   - > : grater than
+   - <= : lesser equal
+   - >= : grater equal
+   - = : equal (==가 아님!)
+   - !=, ^=, <> : not equal
+
+6. 근무 부서가 10번인 사원들의 사원번호, 이름, 근무 부서를 가져온다.
+```sql
+SELECT EMPNO, ENAME, DEPTNO
+FROM EMP
+WHERE DEPTNO = 10;
+```
+
+7. 근무 부서 번호가 10번이 아닌 사원들의 사원번호, 이름, 근무 부서 번호를 가져온다.
+```sql
+SELECT EMPNO, ENAME, DEPTNO
+FROM EMP
+WHERE DEPTNO != 10;
+(= WHERE DEPTO <>(^=) 10;
+```
+
+8. 급여가 1500이상인 사원들의 사원번호, 이름, 급여를 가져온다.
+```sql
+SELECT EMPNO, ENAME, SAL
+FROM EMP
+WHERE SAL >= 1500;
+```
+
+9. 이름이 SCOTT 사원의 사원번호, 이름, 직무, 급여를 가져온다.
+```sql
+SELECT EMPNO, ENAME, JOB, SAL
+FROM EMP
+WHERE ENAME = 'SOCTT';
+```
+   - 문자열을 가져올 때는 반드시 ' ' 또는 " " (중요)
+
+10. 직무가 SALEMAN인 사원의 사원번호, 이름, 직무를 가져온다
+```sql
+SELECT EMPNO, ENAME, JOB
+FROM EMP
+WHERE JOB = 'SALEMAN';
+```
+
+11. 직무가 CLERK이 아닌 사원의 사원 번호, 이름, 직무를 가져온다.
+```sql
+SELECT EMPNO, ENAME, JOB
+FROM EMP
+WHERE JOB <> 'CLERK';
+```
+
+12. 1982년 1월 1일 이후에 입사한 사원의 사원번호, 이름, 입사일을 가져온다.
+```sql
+SELECT EMPNO, ENAME, HIREDATE
+FROM EMP
+WHERE HIREDATE >= '1982/01/01';
+```
+   - 년도는 '년/월/일'로 표기
