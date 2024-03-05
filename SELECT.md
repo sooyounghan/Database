@@ -6,8 +6,8 @@
 3. 기본 구조
 
 ```sql
-SELECT {* | 컬럼명 1, .. 컬럼명 N}
-FROM 테이블명
+SELECT {* | [테이블명.]컬럼명 1, .. 컬럼명 N}
+FROM [데이터베이스명.]테이블명
 [WHERE 조건]
 [GROUP BY 그룹기준]
 [HAVING 그룹조건]
