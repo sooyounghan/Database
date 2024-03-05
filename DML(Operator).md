@@ -20,7 +20,8 @@ FROM EMP;
 ```
 <div align = "center">
 <img src = "https://github.com/sooyounghan/DataBase/assets/34672301/3552a7a8-cf8c-490a-8469-41542a14640c">
-</div>
+</div>   
+
   - null 값 : 의미가 없는 값, 저장할 값이 없는 것 (Oracle : 무한대를 의미)
 
   - null 값 처리 : NVL("값", "지정값") - NVL 함수는 값이 NULL인 경우 지정값을 출력, 아니라면 원래의 값 출력
