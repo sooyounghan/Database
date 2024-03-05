@@ -11,7 +11,7 @@
    - 데이터 논리적 독립성 = 데이터에 종속적이지 않음
 
 -----
-### RDBMS (Relational DataBase)
+### RDBMS (Relational DataBase Management System)
 ----
 1. 관계형 데이터 모델을 기반으로 한 데이터베이스
 2. 모든 데이터를 테이블 단위로 저장
