@@ -55,14 +55,13 @@ WHERE ENAME LIKE '____';
 ```
 
 9. 조건의 우선순위
-    - WHERE절에서는 조건의 우선순위를 지정해야하는 경우 소괄호 설정
-    - Like 연산자에서는 다음과 같이 실행될 수 있음
+   - WHERE절에서는 조건의 우선순위를 지정해야하는 경우 소괄호 설정
+   - Like 연산자에서는 다음과 같이 실행될 수 있음
   <div align = "center">
   <img width="318" alt="그림01" src="https://github.com/sooyounghan/Web/assets/34672301/4bf5bd3d-807e-49cc-9512-aa7604883e8b">
   </div>   
   
-    - 다음과 같이 괄호 지정  
-
+   - 다음과 같이 괄호 지정  
 <div align = "center">
 <img width="312" alt="그림02" src="https://github.com/sooyounghan/Web/assets/34672301/d6c2794d-841e-4f71-b118-1cf48936e42a">
 </div>  
