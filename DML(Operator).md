@@ -104,7 +104,8 @@ FROM EMP
 WHERE ENAME = 'SOCTT';
 ```
    - 문자열을 가져올 때는 반드시 ' ' 또는 " " (중요)
-
+   - 🎈 오라클에서는 맞춤법, 대소문자까지 완전히 일치해야만 조회!
+     
 10. 직무가 SALEMAN인 사원의 사원번호, 이름, 직무를 가져온다
 ```sql
 SELECT EMPNO, ENAME, JOB
