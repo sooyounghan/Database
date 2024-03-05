@@ -134,14 +134,15 @@ WHERE 조건절;
 ```
 4. SELECT ~ FROM 까지 모든 ROW를 얻어온 뒤, 각 행을 조건절과 비교해서 참 값은 남겨두고, 거짓은 제거
 5. 비교 연산자
-   - < : lesser than
-   - > : grater than
-   - <= : lesser equal
-   - >= : grater equal
-   - = : equal (==가 아님!)
-   - !=, ^=, <> : not equal
 
-6. 근무 부서가 10번인 사원들의 사원번호, 이름, 근무 부서를 가져온다.
+       - < : lesser than
+       - > : grater than
+       - <= : lesser equal
+       - >= : grater equal
+       - = : equal (==가 아님!)
+       - !=, ^=, <> : not equal
+
+7. 근무 부서가 10번인 사원들의 사원번호, 이름, 근무 부서를 가져온다.
 ```sql
 SELECT EMPNO, ENAME, DEPTNO
 FROM EMP
