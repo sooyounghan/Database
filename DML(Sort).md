@@ -82,7 +82,7 @@ ORDER BY COMM DESC;
 ```sql
 SELECT ENAME, EMPNO, SAL
 FROM EMP
-OREDER BY SAL DESC, ENAME ASC;
+ORDER BY SAL DESC, ENAME ASC;
 ```
  - ORDER BY 정렬기준1 정렬방법, 정렬기준2 정렬방법, 정렬기준3 정렬방법 ... 정렬기준n 정렬방법 : n차 정렬 가능
  - 의미 : 정렬기준1에 의해 정렬을 하고, 이에 대해 정렬기준2에 대해 정렬을 실시한다. (즉, 이럴 경우 정렬기준1에서 동일한 값이 나오면, 정렬기준2에 대해 또 다른 정렬 가능)
