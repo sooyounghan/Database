@@ -42,7 +42,7 @@ INSERT INTO EMP01(EMPNO, ENMAE, JOB) VALUES(3333, '최길동', '인사');
 INSERT INTO EMP01(EMPNO, ENAME, JOB) VALUES(4444, '박길동', '생산');
 ```
 
-5. MySQL에서는 1개의 테이블에 다중 Record를 입력할 수 있음
+5. 1개의 테이블에 다중 Record를 입력할 수 있음
 ```sql
 INSERT INTO TABLE_NAME[(COL_NAME1, COL_NAME2, ...)]
 VALUES(VALUE1, .... )
