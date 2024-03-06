@@ -56,9 +56,49 @@ INSERT INTO EMP01 VALUES(5555, '황길동', '개발');
 ### INSEERT : COLUMN 목록에 모든 목록이 있지 않은 경우
 -----
 1. 다음과 같은 사원 정보를 입력
-   - 사원번호가 5555, 이름이 황길동인 사원의 정보를 입력
+   - 사원번호가 6666, 이름이 이길동인 사원의 정보를 입력
 ```sql
 INSERT INTO EMP01 VALUES(6666, '이길동');
 ```
   : JOB Attribute에는 NULL 값이 입력   
 
+2. 지정해주지 않으면 NULL 값이 삽입되며, 해당 속성 값이 필요하지 않으면 NULL값 부여 가능
+   - 사원번호가 7777, 이름이 고길동인 사원의 정보를 입력
+```sql
+INSERT INTO EMP01 VALUES(7777, '고길동', NULL);
+```
+
+-----
+### INSEERT : Sub-Query로 데이터 저장
+-----
+```sql
+INSERT INTO TABLE_NAME Sub-Query;
+```
+-----
+```sql
+INSERT ALL
+INTO TABLE_NAME(COL_NAME) VALUES(COL_NAME)
+INTO TABLE_NAME(COL_NAME) VALUES(COL_NAME);
+```
+
+1. 다음과 같이 EMP01 TABLE과 구조가 존재한다고 하자.
+```sql
+CREATE TABLE EMP01
+AS
+SELECT EMPNO, ENAME, JOB
+FROM EMP
+WHERE 1=0;
+```
+
+```sql
+EMPNO NUMBER(4, 0)
+ENAME VARCHAR(10)
+JOB VARCHAR2(9)
+```
+
+2. Sub-Query를 통한 데이터 저장 예
+```sql
+INSERT INTO EMP01(EMPNO, ENAME, JOB)
+SELECT EMPNO, ENAME, JOB
+FROM EMP;
+```
