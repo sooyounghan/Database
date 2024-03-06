@@ -44,7 +44,8 @@ INSERT INTO EMP01(EMPNO, ENAME, JOB) VALUES(4444, '박길동', '생산');
 -----
 ### INSEERT : COLUMN 목록을 생략하는 경우
 -----
-1. INSERT INTO TABLE_NAME VALUES (VALUE1, VAULE2, ...) : 생략되어도 VALUE 항목대로 각 테이블 항목에 1:1매칭
+1. INSERT INTO TABLE_NAME VALUES (VALUE1, VAULE2, ...)
+   : 생략되어도 모든 VALUE 항목대로 각 테이블 항목에 넣을 경우에 가능하며, 1:1매칭
 
 2. 다음과 같은 사원 정보를 입력
    - 사원번호가 5555, 이름이 황길동, 직무가 개발인 사원의 정보를 입력
