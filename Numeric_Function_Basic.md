@@ -28,7 +28,7 @@ FROM DUAL;
 : 결과는 10 + 10행이며, 값은 20
 
 -----
-### 절댓값 함수 : ABS
+### ABS(n) : 절댓값 반환 함수
 -----
 1. -10의 절댓값을 구하면,
 ```sql
@@ -48,7 +48,7 @@ FROM EMP01;
 ```
 
 -----
-### 소수자 이하 버림 : FLOOR
+### FLOOR(n) : 매개변수 n보다 작거나 가장 큰 정수 반환
 -----
 1. 12.34 출력
 ```sql
@@ -74,8 +74,18 @@ SELECT FLOOR(SAL * 0.85)
 WHERE EMP01
 WHERE SAL >= 1500;
 ```
+
 -----
-### 반올림 : ROUND (기본값 : 소수점 첫쨰 자리에서 반올림)
+### CEIL(n) : 매개변수 n과 같거나 가장 큰 정수 반환
+-----
+```sql
+SELECT CEIL(10.123), CEIL(10.541), CEIL(11.001)
+FROM DUAL;
+```
+: 11, 11, 12
+
+-----
+### ROUND(n, i) : 매개변수 n을 소수점 (i + 1)의 자리에서 반올림 (i는 생략 가능) [디폴트 값 : 0]
 -----
 1. 12.3456 출력
 ```sql
@@ -83,7 +93,8 @@ SELECT 12.3456
 FROM DUAL;
 ```
 
-2. 12.3456 반올림 출력
+2. ROUND(n) : 매개변수 n을 소수점 1번째 자리에서 반올림 [디폴트값]
+   - 12.3456 반올림 출력
 ```sql
 SELECT ROUND(12.3456)
 FROM DUAL;
@@ -95,14 +106,14 @@ SELECT ROUND(12.8888)
 FROM DUAL;
 ```
 
-4. 자릿수 조정 가능 : ROUND(수, 소수점 반올림 위치 기준)
+4. ROUND(n, i) : 매개변수 n을 소수점 (i + 1)의 자리에서 반올림 (i는 생략 가능)
 ```sql
 SELECT ROUND(12.8888, 2)
 FROM DUAL;
 ```
 : 값은 12.9
 
-5. 음수도 가능 : ROUND(수, 정수 기준)
+5. 음수도 가능 : 소수점을 기준으로 왼쪽 i번쨰에서 반올림 발생
 ```sql
 SELECT ROUND(1222.8888, -2)
 FROM DUAL;
@@ -121,19 +132,19 @@ FROM EMP
 WHERE SAL <= 2000;
 ```
 -----
-### TRUNCATE(TRUNC) : 자릿수 지정이 가능한 버림 [해당 지정 소수점 뒤 버림] (기본값 : 소수점 이하)
+### TRUNCATE(TRUNC(n1, n2)) : n1을 소수점 n2자리에서 무조건 버림 반환 (기본값 : n2 = 0)
 -----
 ```sql
 SELECT TRUNC(1112.3456) FROM DUAL;
 ```
 
-1. 소수점 지정 가능
+1. TRUNC(n1, n2) : 소수점 지정 가능(양수일 때는 소수점 오른쪽 자리 버림)
 ```sql
 SELECT TRUNC(1112.3456, 2) FROM DUAL;
 ```
 : 1112.34
 
-2. 음수로도 가능
+2. TRUNC(n1, n2) : 음수도 가능(음수일 때는 소수점 왼쪽 자리 버림)
 ```sql
 SELECT TRUNC(1112.3456, -2) FROM DUAL;
 ```
@@ -150,11 +161,48 @@ FROM EMP;
 ```
 
 -----
-### MOD : 나머지를 구하는 연산자
+### MOD(n1, n2) : n1을 n2로 나눈 나머지를 구하는 연산자
 -----
+: n2 - n1 * FLOOR(n2 / n1)
 ```sql
 SELECT MOD(10, 3), MOD(10, 4)
 FROM DUAL;
 ```
 : 결과값 : 3, 2
 
+```sql
+SELECT MOD(19, 4)
+FROM DUAL;
+```
+: 결과값 : 3
+
+-----
+### REMAINDER(n1, n2) : n1을 n2로 나눈 나머지 값 구하는 연산자
+-----
+: n2 - n1 * ROUND(n2 / n1)
+
+```sql
+SELECT REMAINDER(19, 4)
+FROM DUAL;
+```
+: 결과값 : -1
+
+-----
+### POWER(n1, n2) : n1를 n2제곱 한 결과 반환 
+-----
+1. n1는 정수 / 실수 모두 가능
+2. n2가 음수면 n1은 정수만 가능
+```sql
+SELECT POWER(3, 2), POWER(3, 3), POWER(3, 3.0001)
+FROM DUAL;
+```
+: 9, 27, 27.0029664
+
+-----
+### SQRT(n) : n의 제곱근을 반환한다. 
+-----
+```sql
+SELECT SQRT(2), SQRT(5)
+FROM DUAL;
+```
+: 1.41421356, 2.23606798
