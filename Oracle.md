@@ -46,7 +46,7 @@
 ### 사용자 생성
 ----
 1. 사용자 생성하기
-
+   
            CREATE USER 유저명 IDENTIFIED BY 비밀번호
    	   DEFAULT TABLESPACE 테이블스페이스명
    	   TEMPORARY TABLESPACE 테이블스페이스명;
