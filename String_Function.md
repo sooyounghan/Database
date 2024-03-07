@@ -232,7 +232,7 @@ FROM DUAL;
 SELECT LTRIM('ABCDEFGABC', 'ABC'), RTRIM('ABCDEFGABC', 'ABC'), LTRIM('가나다라','나'), RTRIM('가나다라', '다')
 FROM DUAL;
 ```
-: DEFGABC, ABCDEFG, 가나다라, 간다ㅏ라
+: DEFGABC, ABCDEFG, 가나다라, 가나다라
 
 -----
 ### REPLACE(char, search_str, replace_str)
