@@ -51,12 +51,13 @@
    	   DEFAULT TABLESPACE 테이블스페이스명
    	   TEMPORARY TABLESPACE 테이블스페이스명;
 
-2, 권한 부여하기
-	- 사용자 생성을 완료하면, 해당 사용자에게 권한 부여
- 	- 데이터베이스 접속을 위해 CONNECT 라는 권한 부여해야 데이터베이스 접속 가능
-  	- GRANT DBA TO 유저명;
+2, 권한 부여하기   
+
+   - 사용자 생성을 완료하면, 해당 사용자에게 권한 부여
+   - 데이터베이스 접속을 위해 CONNECT 라는 권한 부여해야 데이터베이스 접속 가능
+   - GRANT DBA TO 유저명;
 
 3. 사용자 계정 DB 접속 확인
    
-	- CONNECT 유저명/암호;
-	- SELECT USER FROM DUAL;
+   - CONNECT 유저명/암호;
+   - SELECT USER FROM DUAL;
