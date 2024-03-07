@@ -107,7 +107,8 @@ FROM DUAL;
 : 4, 4, 5, 15
 
 -----
-### SUBSTR(char, pos, len) : 문자열 잘라내기 (문자열, 인덱스), SUBSTRB(char, pos, len) : 문자열 Byte 단위로 잘라내기 (문자열, 인덱스)
+### SUBSTR(char, pos, len) : 문자열 잘라내기 (문자열, 인덱스)
+### SUBSTRB(char, pos, len) : 문자열 Byte 단위로 잘라내기 (문자열, 인덱스)
 -----
 1. Oracle : 문자열의 첫 번째의 인덱스가 1
    
