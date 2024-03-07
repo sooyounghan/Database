@@ -2,12 +2,13 @@
 ### 그룹 함수
 -----
 1. SELECT문을 통해 가져올 결과를 그룹으로 묶고, 그룹 내에서 지정된 컬럼의 총합, 평균 등을 구할 수 있는 함수
-   - sum(COL_NAME) : 총합
-   - avg(COL_NAME) : 평균
-   - count(COL_NAME) : Row의 수
-   - max(COL_NAME) : 최대 값
-   - min(COL_NAME) : 최소 값
-
+   - SUM(expr) : 총 합계 값
+   - AVG(expr) : 평균값
+   - COUNT(expr, *) : 쿼리 결과의 전체 Row 수 반환
+   - MAX(expr) : 최대 값
+   - MIN(expr) : 최소 값
+   - VAR(expr) : 분산 (주어진 범위의 개별 값과 평균값의 차이인 편차를 구해 제곱해서 평균한 값)
+   - STDDEV(expr) : 표준 편차 (분산 값의 제곱근)
 2. 집계함수는 NULL값을 포함하지 않음! (NULL은 무한이며, 값이 없는 상태를 의미)
    
 3. COUNT 함수
