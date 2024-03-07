@@ -159,7 +159,7 @@ from dual;
 
 4. abcdefg 문자열에서 aaa 문자열을 찾는다.
 ```sql
-SELECT SUBSTR('abcdefg', 'aaa')
+SELECT INSTR('abcdefg', 'aaa')
 FROM DUAL;
 ```
 : 해당 문자열이 없으므로 0
@@ -168,7 +168,7 @@ FROM DUAL;
 ```sql
 SELECT ENAME
 FROM EMP;
-WHERE SUBSTR(ENAME, 'A') > 1;
+WHERE INSTR(ENAME, 'A') > 1;
 ```
 ```sql
 SELECT ENAME
