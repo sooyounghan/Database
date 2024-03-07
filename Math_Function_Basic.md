@@ -84,19 +84,19 @@ FROM DUAL;
 ```
 
 2. 12.3456 반올림 출력
-```
+```sql
 SELECT ROUND(12.3456)
 FROM DUAL;
 ```
 
 3. 12.8888 반올림 출력
-```
+```sql
 SELECT ROUND(12.8888)
 FROM DUAL;
 ```
 
 4. 자릿수 조정 가능 : ROUND(수, 소수점 반올림 위치 기준)
-```
+```sql
 SELECT ROUND(12.8888, 2)
 FROM DUAL;
 ```
