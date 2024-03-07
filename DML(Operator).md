@@ -204,3 +204,23 @@ WHERE NOT(EMPNO IN(7499, 7566, 7839));
 (= WHERE NOT (EMPNO = 7499 OR EMPNO = 7566 OR EMPNO = 7839);)
 ```
   - IN 연산자 수행 -> NOT으로 부정
+
+-----
+### 조건식 (Condition)
+-----
+1. ANY, SOME : '아무것'이나 '하나만'을 뜻하므로, 주어진 값 중 하나라도 존재하는 값 (= OR 연산자와 동일)
+```sql
+SELECT EMPNO, SAL
+FROM EMP
+WHERE SAL = ANY|SOME(2000, 3000, 4000)
+OREDER BY EMPNO;
+```
+
+2. ALL : 모든 조건을 동시에 만족 (= AND 연산자와 동일)
+ ```sql
+SELECT EMPNO, SAL
+FROM EMP
+WHERE SAL = ALL(2000, 3000, 4000)
+OREDER BY EMPNO;
+```
+   
