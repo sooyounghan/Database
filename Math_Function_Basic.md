@@ -39,10 +39,7 @@ SELECT -10, ABS(-10) FROM DUAL;
 2. 전 직원의 급여를 2000 삭감하고, 삭감한 급여액의 절댓값을 구한다.
 ```sql
 UPDATE EMP01
-SET SAL = SAL-2000;
-
-SELECT ABS(SAL)
-FROM EMP01;
+SET SAL = ABS(SAL-2000);
 ```
 
 ```sql
@@ -68,11 +65,8 @@ SELECT FLOOR(12.34) FROM DUAL;
 3. 급여가 1500 이상인 사원의 급여를 15% 삭감한다. 단, 소수점 이하는 버린다.
 ```sql
 UPDATE EMP01
-SET SAL = SAL * 0.85;
+SET SAL = FLOOR(SAL * 0.85);
 WHERE SAL >= 1500;
-
-SELECT FLOOR(SAL)
-FROM EMP01;
 ```
 
 ```sql
@@ -101,4 +95,66 @@ SELECT ROUND(12.8888)
 FROM DUAL;
 ```
 
-4. 자릿수 조정 가능 : ROUND(
+4. 자릿수 조정 가능 : ROUND(수, 소수점 반올림 위치 기준)
+```
+SELECT ROUND(12.8888, 2)
+FROM DUAL;
+```
+: 값은 12.9
+
+5. 음수도 가능 : ROUND(수, 정수 기준)
+```sql
+SELECT ROUND(1222.8888, -2)
+FROM DUAL;
+```
+: 십의 자리에서 반올림 (1200)
+
+6. 급여가 2000 이하인 사원들의 급여를 20%씩 인상한다. 단, 10의 자리를 기준으로 반올림한다.
+```sql
+UPDATE EMP
+SET SAL = ROUND(SAL * 1.2, -2)
+WHERE SAL <= 2000;
+```
+```sql
+SELECT ROUND(SAL, -2)
+FROM EMP
+WHERE SAL <= 2000;
+```
+-----
+### TRUNCATE(TRUNC) : 자릿수 지정이 가능한 버림 [해당 지정 소수점 뒤 버림] (기본값 : 소수점 이하)
+-----
+```sql
+SELECT TRUNC(1112.3456) FROM DUAL;
+```
+
+1. 소수점 지정 가능
+```sql
+SELECT TRUNC(1112.3456, 2) FROM DUAL;
+```
+: 1112.34
+
+2. 음수로도 가능
+```sql
+SELECT TRUNC(1112.3456, -2) FROM DUAL;
+```
+: 1100
+
+3. 전 직원의 급여를 십의 자리 이하를 삭감한다.
+```sql
+UPDATE EMP
+SET SAL = TRUNC(SAL, -2);
+```
+```
+SELECT TRUNC(SAL, -2)
+FROM EMP;
+```
+
+-----
+### MOD : 나머지를 구하는 연산자
+-----
+```sql
+SELECT MOD(10, 3), MOD(10, 4)
+FROM DUAL;
+```
+: 결과값 : 3, 2
+
