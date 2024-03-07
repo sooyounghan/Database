@@ -19,6 +19,14 @@ FROM EMP, DEPT;
 ```
 
 -----
+### JOIN 구분
+-----
+1. 조인 연산자에 따른 구분 : EQUI-JOIN, ANTI-JOIN
+2. 조인 대상에 따른 구분 : SELF-JOIN
+3. 조인 조건에 따른 구분 : INNER-JOIN, OUTER-JOIN, SEMI-JOIN, CATASSIAN-JOIN
+4. 기타 : ANSI-JOIN
+   
+-----
 ### JOIN 조건
 -----
 1. 두 개 이상의 테이블에서 가져온 결과 중 정확한 결과면, 가져오기 위해 공통 부분을 이용한 조건문 반드시 필요
@@ -41,6 +49,18 @@ WHERE EMP.DEPTNO = DEPT.DEPTNO;
 
 ```sql
 SELECT *
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO;
+```
+
+-----
+### 동등 조인(EQUI-JOIN)
+-----
+1. 가장 기본이 되며, 일반적인 조인 방법
+2. WHERE절에 등호('=') 연산자를 이용해 2개 이상의 테이블이나 뷰를 연결한 조인
+3. 등호 연산자를 사용한 WHERE절 조건(조인 조건)에 만족하는 데이터를 추출 
+```sql
+SELECT E.EMPNO, E.ENAME, D.DEPTNO, D.DNAME
 FROM EMP E, DEPT D
 WHERE E.DEPTNO = D.DEPTNO;
 ```
