@@ -252,7 +252,7 @@ FROM DUAL;
 : ABCDEF
 
 -----
-### TRANSLATE(expr, from_str, to_str
+### TRANSLATE(expr, from_str, to_str)
 -----
 1. expr 문자열에서 from_str에 해당하는 문자를 찾아 to_str로 바꾼 결과 반환
 2. 문자열 전체가 아니라 한 글자씩 매핑해서 변경
