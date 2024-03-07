@@ -57,5 +57,6 @@
   	- GRANT DBA TO 유저명;
 
 3. 사용자 계정 DB 접속 확인
+   
 	- CONNECT 유저명/암호;
 	- SELECT USER FROM DUAL;
