@@ -31,7 +31,11 @@ FROM DUAL;
 <div align = "center">
 <img src="https://github.com/sooyounghan/DataBase/assets/34672301/68293771-c820-4317-ace3-fe519b5ecd00">
 </div>
-
+  - 9 : 해당 자리에 숫자가 있으면 표시, 없으면 빈자리로 남겨둠 (단, 정수부는 동일하지만, 소수부는 0으로 채움)
+  - 0 : 해당 자리에 숫자가 없으면 0으로 채우는 역할 (정수부, 소수부 동일)
+  - $ : 달러로 표시
+  - L : 지역 단위로 표시
+  
 -----
 ### TO_DATE(char, format), TO_NUMBER(char, format)
 -----
