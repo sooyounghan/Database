@@ -44,12 +44,12 @@ FROM EMP;
 -----
 ### INITCAP(char) : 첫 글자만 대문자로, 나머지는 소문자로 변환
 -----
-1. 첫 글자만 대문자로, 나머지는 소문자로 가져온다.
+1. 첫 글자만 대문자로, 나머지는 소문자로 가져온다. (공백 기준)
 ```sql
-SELECT INITCAP('aBCDEF')
+SELECT INITCAP('aBCDEF gHI')
 FROM DUAL;
 ```
-: Abcedf 출력
+: Abcedf Ghi출력
 
 2. 사원 이름을 첫 글자는 대문자로, 나머지는 소문자로 가져온다.
 ```sql
