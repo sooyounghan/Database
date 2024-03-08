@@ -99,19 +99,21 @@ FROM DUAL;
 SELECT ROUND(12.3456)
 FROM DUAL;
 ```
+: 12 출력
 
 3. 12.8888 반올림 출력
 ```sql
 SELECT ROUND(12.8888)
 FROM DUAL;
 ```
+: 13 출력
 
 4. ROUND(n, i) : 매개변수 n을 소수점 (i + 1)의 자리에서 반올림 (i는 생략 가능)
 ```sql
 SELECT ROUND(12.8888, 2)
 FROM DUAL;
 ```
-: 값은 12.9
+: 값은 12.89
 
 5. 음수도 가능 : 소수점을 기준으로 왼쪽 i번쨰에서 반올림 발생
 ```sql
