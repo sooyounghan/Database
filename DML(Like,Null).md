@@ -13,13 +13,24 @@ WHERE COL_NAME LIKE '와일드카드';
 3. 와일드카드
    - _ : 글자 하나를 의미
    - % : 글자 0개 이상을 의미
-   - 위 두개의 조합으로 이루어짐
+   - 문자열에 _나 %가 들어간 문자를 검색하고 싶다면 ESCAPE 구문으로 특수문자 지정 후 검색 (단, &는 변수 선언으로 제외)
+```sql
+SELECT COL_NAME
+FROM TABLE
+WHERE COL_NAME LIKE '%이스케이프문자(_ or %)' ESCAPE '이스케이프문자';
+```
+```sql
+SELECT ENAME, EMPNO
+FROM EMP
+WHERE ENAME LIKE '%@_(or%)%' ESCAPE '@'
+```
 
+   - 위 두개의 조합으로 이루어짐
 
          예) _A_ : 세 글자 중 두 번째 글자만 A인 문자
          예) %A% : 글자 수의 제한은 없으나 중간에 A 문자 포함
 
-4. 이름이 F로 시작하는 사원의 이름과 사원 번호를 가져온다.
+3. 이름이 F로 시작하는 사원의 이름과 사원 번호를 가져온다.
 ```sql
 SELECT ENAME, EMPNO
 FROM EMP
