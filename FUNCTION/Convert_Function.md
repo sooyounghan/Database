@@ -38,9 +38,11 @@ FROM DUAL;
   - L : 지역 단위로 표시
 
 4. 형식에는 한글이 들어갈 수 없음
+
+5. 1900-10-10와 같이 날짜 데이터를 받아온다.
 ```sql
-SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
-FROM DUAL;
+SELECT TO_CHAR(HIREDATE, 'YYYY-MM-DD'
+FROM EMP;
 ```
 
 -----
