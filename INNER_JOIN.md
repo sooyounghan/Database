@@ -25,6 +25,10 @@ FROM EMP, DEPT;
 2. 조인 대상에 따른 구분 : SELF-JOIN
 3. 조인 조건에 따른 구분 : INNER-JOIN, OUTER-JOIN, SEMI-JOIN, CATASSIAN-JOIN
 4. 기타 : ANSI-JOIN
+
+         INNER-JOIN : EQUI-JOIN, ANTI-JOIN, SELF-JOIN
+         OUTER-JOIN : OUTER-JOIN, SEMI-JOIN, CATASSIAN-JOIN
+         그 외 : ANSI-JOIN
    
 -----
 ### JOIN 조건
@@ -134,4 +138,41 @@ GROUP BY S.GRADE;
 SELECT E.EMPNO, E.ENAME, E.SAL, D.DNAME, D.LOC
 FROM EMP E, SALGRADE S, DEPT D
 WHERE (E.DEPTNO = D.DEPTNO) AND (E.SAL BETWEEN S.LOSAL AND S.HISAL) AND (S.GRADE = 4);
+```
+-----
+### Self Join
+-----
+<div align = "center">
+<img src = "https://github.com/sooyounghan/DataBase/assets/34672301/e4503ba0-e62d-4bab-9e38-2278ffc4b744">
+</div>
+   
+1. 같은 테이블에 두 번 이상 조인하는 것 (동일한 한 테이블을 사용해 조인)
+
+2. SMITH 사원의 사원번호, 이름, 직속상관 이름을 가져온다.
+   - E1 : SMITH의 사원 정보
+   - E2 : SMITH 사원의 직속 상관 정보
+```sql
+SELECT E1.EMPNO, E1.ENAME, E2.ENAME
+FROM EMP E1, EMP E2
+WHERE (E1.MGR = E2.EMPNO) AND (E1.ENAME = 'SMITH');
+```
+
+3. FROD 사원 밑에서 일하는 사원들의 사원번호, 이름, 직무를 가져온다.
+  - E1 : FROD 사원의 사원 정보
+  - E2 : FROD 사원의 부하직원 정보
+```sql
+SELECT E2.EMPNO, E2.ENAME, E2.JOB
+FROM EMP E1, EMP E2
+WHERE (E1.EMPNO = E2.MGR) AND (E1.ENAME = 'FROD'); 
+```
+
+4. SMITH 사원의 직속상관과 동일한 직무를 가지고 있는 사원들의 사원번호, 이름, 직무를 가져온다.
+   - E1 : SMITH 사원의 사원 정보
+   - E2 : SMITH 사원의 직속 상관 정보
+   - E3 : SMITH 사원의 직속 상관과 동일한 직무를 가지고 있는 사원의 정보
+      
+```sql
+SELECT E3.EMPNO, E3.ENAME, E3.JOB
+FROM EMP E1, EMP E2, EMP E3
+WHERE (E1.MGR = E2.EMPNO) AND (E1.ENAME = 'SMITH') AND (E2.JOB = E3.JOB);
 ```
