@@ -6,7 +6,7 @@
 3. 명시적 형변환 : 변환함수를 이용해 직접 형변환
 
 -----
-### TO_CHAR(숫자 혹은 날짜, format)
+### TO_CHAR(숫자 혹은 날짜, format) : 오라클 -> 프로그램
 -----
 1. 숫자나 날짜를 문자로 변환해주는 함수
 
@@ -36,9 +36,15 @@ FROM DUAL;
   - 0 : 해당 자리에 숫자가 없으면 0으로 채우는 역할 (정수부, 소수부 동일)
   - $ : 달러로 표시
   - L : 지역 단위로 표시
-  
+
+4. 형식에는 한글이 들어갈 수 없음
+```sql
+SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
+FROM DUAL;
+```
+
 -----
-### TO_DATE(char, format), TO_NUMBER(char, format)
+### TO_DATE(char, format), TO_NUMBER(char, format) : 프로그램 -> 오라클
 -----
 1. 문자를 날짜형으로 변환하는 함수
 2. TO_DATE : DATE 타입 / TO_TIMESTAMP :TIMESTAMP 형식
