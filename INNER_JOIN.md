@@ -62,8 +62,12 @@ WHERE E.DEPTNO = D.DEPTNO;
    - 조인 결과가 참(True)에 해당하는, 두 컬럼의 값이 같은 행을 추출
      
 -----
-### 동등 조인(EQUI-JOIN)
+### 동등 조인(EQUI-JOIN) [= INNER-JOIN]
 -----
+<div align = "center">
+<img src = "https://github.com/sooyounghan/DataBase/assets/34672301/0d9b8d58-0f5d-4c74-b699-2266c78f99b8">
+</div>
+
 1. 가장 기본이 되며, 일반적인 조인 방법
 2. WHERE절에 등호('=') 연산자를 이용해 2개 이상의 테이블이나 뷰를 연결한 조인
 3. 등호 연산자를 사용한 WHERE절 조건(조인 조건)에 만족하는 데이터를 추출 
