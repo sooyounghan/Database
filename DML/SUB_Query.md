@@ -66,3 +66,36 @@ WHERE SAL > (SELECT AVG(SAL)
               FROM EMP
               WHERE JOB = 'SALESMAN);
 ```
+
+9. DALLAS 지역에 근무하는 사원들의 평균 급여를 가져온다.
+```sql
+SELECT AVG(SAL)
+FROM EMP
+WHERE (DPETNO = (SELECT DEPTNO
+                 FROM DEPT
+                 WHERE LOC = 'DALLAS'));
+```
+
+10. SALES 부서에 근무하는 사원들의 사원번호, 이름, 근무지역을 가져온다.
+```sql
+SELECT E.EMPNO, E.ENAME, D.LOC
+FROM EMP E, DEPT D
+WHERE (E.DEPTNO = D.DEPTNO) AND E.DEPTNO = (SELECT DEPTNO
+                                            FROM DEPT
+                                            WHERE DNAME = 'SALES');
+```
+
+11. CHICAGO 지역에 근무하는 사원들 중 BLAKE이 직속상관인 사원들의 사원번호, 이름, 직무를 가져온다.
+    - E1 : BLAKE이 직속상관인 사람들의 사원 정보
+    - E2 : BLAKE 사원에 대한 정보
+      
+```sql
+SELECT EMPNO, ENAME, JOB
+FROM EMP
+WHERE MGR = (SELECT EMPNO 
+             FROM EMP                        
+             WHERE ENAME = 'BLAKE')
+AND DEPTNO = (SELECT DEPTNO
+              FROM DEPT
+              WHERE LOC = 'CHICAGO');
+````
