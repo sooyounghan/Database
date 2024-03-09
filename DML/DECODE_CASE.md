@@ -16,7 +16,7 @@ SELECT EMPNO, ENAME,
        DECODE(DEPTNO, 10, '인사과',
                       20, '개발부',
                       30, '경영지원팀',
-                      40, '생산부)
+                      40, '생산부')
 FROM EMP;
 ```
 
