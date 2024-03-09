@@ -2,6 +2,9 @@
 ### 날짜 함수
 -----
 1. 날짜 데이터를 제어할 수 있는 함수들을 제공
+   - ORACLE : 년/월/일 시:분:초
+   - MySQL : 년/월/일
+   - TIMESTAMP : 년/월/일 시:분:초 밀리초
 2. SYSDATE : 현재 날짜와 시간을 반환
 3. MONTHS_BETWEEN : 두 날짜간의 개월 수를 구함
 4. ADD_MONTHS : 주어진 개월 수 만큼 더함
@@ -34,6 +37,11 @@ SELECT HIREDATE - 100
 FROM EMP
 WHERE JOB = 'SALESMAN';
 ```
+
+4. MySQL
+   - CURDATE(): "YYYY-MM-DD"형식, 날짜만 출력 (예)2024-03-06)
+   - CURRENT_DATE() : CURDATE()와 동일
+   - NOW() : "YYYY-MM-DD HH24 : MM : SS"형식, 날짜와 시간 출력 (예)2024-03-06 14 : 06 : 25)
 
 -----
 ### ADD_MONTHS(date, Integer) : 매개변수로 들어온 날짜에 Integer 만큼의 월을 더한 날짜 반환
