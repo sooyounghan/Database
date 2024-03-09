@@ -13,6 +13,7 @@
 4. CONN [SYSTEM] : [시스템] 유저로 접근
 5. SHOW USER(= SELECT * FROM ALL_USERS/DBA_USERS) : 사용 유저 보기 
 6. DBA_USERS : 모든 사용자 계정의 정보가 담긴 테이블
+7. 특정 데이터베이스 내 모든 테이블 보기 :  SELECT t * FROM TAB;
 ------
 7. hr계정 : 오라클이 교육용으로 만든 계정으로 기본적으로 잠겨있으므로, 계정 잠금 해제 필요
   - 계정해제 : alter user hr acoount unlock;
@@ -25,9 +26,21 @@
   - BUFFER 내 / 의미 : 쿼리문의 ;와 동일하며, 버퍼에서는 오직 1개의 쿼리문만 실행가능
   - 버퍼 창 불러오기 : ed
   - 저장 후 실행 : 커멘드 창 : /
-
 -----
-### 테이블 스페이스 (Table Space)
+9. RECYCLE_BIN TABLE : 삭제된 파일을 임시 보관하는 휴지통 테이블
+    
+   - OBJECT_NAME : 삭제된 테이블의 Object 이름 
+   - ORIGINAL_NAME : 삭제된 테이블의 원래 이름 
+   - TYPE : 타입 (예) 테이블, 인덱스 등)
+  
+   - 테이블 복구 : FLASHBACK TABLE "삭제된테이블의 OBJECT 이름" TO BEFORE DROP;
+   - 테이블 완전 삭제 : DROP TALBE 테이블명 [PURGE];
+     * purge : 완전 삭제
+   - 휴지통 완전 삭제 : PURGE RECYCLEBIN;
+
+     
+-----
+### 테이블 스페이스 (Table Space) 
 -----
 1. 데이터 저장 단위는 물리적, 논리적 단위로 나눌 수 있음
 2. 물리적 단위는 파일이며, 논리적 단위는 데이터 블록 → 익스텐트 → 세그먼트 → 데이터 스페이스
