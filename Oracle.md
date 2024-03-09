@@ -16,9 +16,9 @@
 7. 특정 데이터베이스 내 모든 테이블 보기 :  SELECT t * FROM TAB;
 ------
 7. hr계정 : 오라클이 교육용으로 만든 계정으로 기본적으로 잠겨있으므로, 계정 잠금 해제 필요
-  - 계정해제 : alter user hr acoount unlock;
-  - 계정비밀번호 지정 : alter user hr idetified by 비밀번호;
-  - conn hr/hr(비밀번호) : hr 계정에 접근
+  - 계정해제 :  ALTER USER hr ACCOUNT UNLOCK;
+  - 계정비밀번호 지정 : ALTER USER hr INDETIFIED BY 비밀번호;
+  - CONN hr/hr(비밀번호) : hr 계정에 접근
 -----
 8. SPOOL
   - 시작 : SPOOL 경로/생성할 파일명
