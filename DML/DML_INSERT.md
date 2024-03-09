@@ -11,7 +11,7 @@
 CREATE TABLE EMP01
 AS
 SELECT EMPNO, ENAME, JOB
-FROM
+FROM EMP
 WHERE 1=0; (조건이 거짓이므로, 데이터는 가져오지 못해도 속성은 가져옴)
 ```
 
