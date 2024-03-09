@@ -246,3 +246,77 @@ VALUES (5, 100);
 -----
 1. 제약조건에 포함되지 않지만, 컬럼의 디폴트 값을 명시하는데 사용
 2. DEFAULT 디폴트 값을 기술하면, 자동으로 디폴트 값이 생성
+
+-----
+### 테이블 레벨 제약 조건
+-----
+1. 제약조건 설정 시, 각 컬럼 마다 지정할 수 있지만 하단 부분에 몰아서 지정 가능
+2. 컬럼 명 옆에 기술하는 것을 컬럼 레벨, 하단에 몰아서 기술하는 것을 테이블 레벨 제약 조건
+
+3. TEST_TABLE10을 생성 (컬럼 레벨)
+```sql
+CREATE TABLE TEST_TABLE10 (
+DATA1 NUMBER CONSTRAINT TEST_TABLE10_DATA1_PK PRIMARY KEY,
+DATA2 NUMBER NOT NULL CONSTRAINT TEST_TABLE10_DATA2_UK UNIQUE,
+DATA3 NUMBER NOT NULL CONSTRAINT TEST_TABLE10_DATA3_FK REFERENECES EMP(EMPNO),
+DATA4 NUMBER NOT NULL CONSTRAINT TEST_TABLE10_DATA4_CK CHECK(DATA4 BETWEEN 1 AND 10),
+DATA5 NUMBER NOT NULL CONSTRAINT TEST_TABLE10_DATA5_CK CHECK(DATA5 IN(10, 20, 30))
+);
+```
+   - 컬럼명 옆에 바로 제약 조건 명시
+     
+4. TEST_TABLE11을 생성 (테이블 레벨)
+```sql
+CREATE TABLE TEST_TABLE11 (
+DATA1 NUMBER NOT NULL,
+DATA2 NUMBER NOT NULL,
+DATA3 NUMBER NOT NULL,
+DATA4 NUMBER NOT NULL,
+DATA5 NUMBER NOT NULL,
+
+CONSTRAINT TEST_TABLE11_DATA1_PK PRIMARY KEY(DATA1),
+CONSTRAINT TEST_TABLE12_DATA2_UK UNIQUE(DATA2),
+CONSTRAINT TEST_TABLE13_DATA3_FK FOREIGN KEY(DATA3) REFERENCES EMP(EMPNO),
+CONSTRAINT TEST_TABLE14_DATA4_CK CHECK(DATA4 BETWEEN 1 AND 10),
+CONSTRAINT TEST_TABLE15_DATA5_CK CHECK(DATA5 IN(10, 20, 30))
+);
+```
+   - 컬럼명 옆이 아닌 컬럼명 선언 후, 하단에 몰아서 작성
+
+-----
+### 복합키 (테이블 레벨로만 가능)
+-----
+1. 테이블 레벨 제약 조건을 설정할 때 하나 이상의 컬럼을 하나의 PRIMARY KEY로 묶어서 사용 가능
+2. 복합키의 경우 각 컬럼에 중복된 데이터가 허용이 되지만, 하나의 ROW에 모든 복합키 컬럼이 중복되는 것은 허용하지 않음
+
+3. TEST_TABLE12을 생성 (테이블 레벨)
+```sql
+CREATE TABLE TEST_TABLE12 (
+DATA1 NUMBER,
+DATA2 NUMBER,
+
+CONSTRAINT TEST_TABLE12_COMBO_PK PRIMARY KEY(DATA1, DATA2)
+);
+```
+
+4. (100, 200) 값을 입력
+```sql
+INSERT INTO TEST_TABLE12(DATA1, DATA2)
+VALUES(100, 200);
+```
+
+5. (100, 300) / (200, 400) 값을 입력 [한 키만 중복 : 문제 없음(ROW 단위에는 문제 없음]
+```sql
+INSERT INTO TEST_TABLE12(DATA1, DATA2)
+VALUES(100, 300);
+VALUES(200, 400);
+```
+
+4. (100, 200) 값을 다시 입력
+```sql
+INSERT INTO TEST_TABLE12(DATA1, DATA2)
+VALUES(100, 200);
+```
+   - 오류 발생 - 무결성 제약조건(TEST_TABLE12_COMBO_PK)에 위배됩니다.
+   - 복합키로 설정된 모든 키가 중복이면, 오류 발생
+   - 또한, NULL 값은 PK이므로 오류 발생
