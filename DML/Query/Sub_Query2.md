@@ -111,7 +111,7 @@ WHERE SAL < (SELECT MIN(SAL)
 
 8. 각 부서별 최저 급여 액수보다 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.
 ```sql 
-SEELCT EMPNO, ENAME, SAL
+SELECT EMPNO, ENAME, SAL
 FROM EMP
 WHERE SAL > ANY (SELECT MIN(SAL)
                 FROM EMP
@@ -122,7 +122,7 @@ WHERE SAL > ANY (SELECT MIN(SAL)
 ```sql
 SELECT EMPNO, ENAME, HIREDATE
 FROM EMP 
-WEHRE HIREDATE < ALL(SELECT HIREDATE
+WHERE HIREDATE < ALL(SELECT HIREDATE
                      FROM EMP
                      WHERE DEPTNO = (SELECT DEPTNO
                                      FROM DEPT
