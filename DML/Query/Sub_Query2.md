@@ -34,7 +34,7 @@ WHERE DEPNTO IN (SELECT DEPTNO
 
 2. 직무가 CLERK인 사원과 동일한 부서에 근무하고 있는 사원들의 사원번호, 이름, 입사일을 가져온다.
 ```sql
-SELELCT EMPNO, ENAME, HIREDATE
+SELECT EMPNO, ENAME, HIREDATE
 FROM EMP
 WHERE DEPTNO IN (SELECT DEPTNO
                  FROM EMP
