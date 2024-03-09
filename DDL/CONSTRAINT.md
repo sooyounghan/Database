@@ -213,7 +213,7 @@ VALUES (7, 300);
 1. 조건에 만족할 경우 컬럼에 저장할 수 있도록 하는 제약조건을 지정
 2. 만족하지 않으면 오류를 발생
 ```sql
-CONSTRAINT 컬럼명 CHECK(제약 조건)
+CONSTRAINT 제약조건명 CHECK(제약 조건)
 ```
 
 3. 테이블 TEST_TABLE6를 생성한다.
