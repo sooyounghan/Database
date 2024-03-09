@@ -8,12 +8,12 @@
    - IN과 비슷하지만, 후행 조건절로 값의 리스트가 아닌 서브 쿼리만 가능
    - 서브 쿼리 내 조인 조건이 있어야함
 ```sql
-SEELCT DEPTNO, DNAME
+SELECT DEPTNO, DNAME
 FROM DEPT D
 WHERE EXISTS (SELECT *
-              FROM EMP E
+              FROM EMP E, DEPT D
               WHERE D.DEPTNO = E.DEPTNO
-              AND SAL > 3000)
+              AND E.SAL > 3000)
 ```
 
 5. ANY, SOME : 서브쿼리의 결과와 하나 이상 일치하면 조건은 참
