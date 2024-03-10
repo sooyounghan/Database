@@ -25,21 +25,13 @@ CREATE [UNIQUE] INDEX [스키마명.]인덱스명
 ON [스키마명.]테이블명 (컬럼1, 컬럼2, ...);
 ```
 
-2. TEST_TABLE100 테이블을 생성한다.
-```sql
-CREATE TABLE TEST_TABLE100 (
-DATA1 NUMBER CONSTRAINT TEST_TABLE100_DATA1_PK PRIMARY KEY,
-DATA2 NUMBER NOT NULL
-);
-```
-
-3. EMP01 테이블에 대해 EMP01_IDX 인덱스를 생성하는데, EMP01 테이블의 ENAME을 인덱스로 생성한다.
+2. EMP01 테이블에 대해 EMP01_IDX 인덱스를 생성하는데, EMP01 테이블의 ENAME을 인덱스로 생성한다.
 ```sql
 CREATE INDEX EMP01_IDX
 ON EMP01(ENAME);
 ```
 
-4. 인덱스 조회 방법
+3. 인덱스 조회 방법
 ```sql
 SELECT INDEX_NAME, TABLE_NAME, COLUMN_NAME
 FROM USER_IND_COLUMNS;
