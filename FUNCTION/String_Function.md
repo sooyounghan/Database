@@ -136,7 +136,7 @@ from dual
 SELECT SUBSTR('abcdefghi', 3, 4), SUBSTR('동해물과 백두산이', 3, 4)
 FROM EMP
 ```
-: cdef, 불과 백
+: cdef, 물과 백
 
 -----
 ### INSTR(str, substr, pos, occur) : str 문자열에서 substr과 일치하는 위치 반환
