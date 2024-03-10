@@ -69,7 +69,7 @@ VALUES (10, 100, 7369);
 ```
 ```sql
 INSERT INTO TEST_TABLE20(DATA1, DATA2, DATA3)
-VAUES (10, 100, 200);
+VALUES (10, 100, 200);
 ```
 : EMP 테이블의 EMPNO에 없는 값을 추가하므로 에러 발생
 
