@@ -47,7 +47,8 @@ FROM USER_IND_COLUMNS;
 ```
 <div align = "center">
 <img src="https://github.com/sooyounghan/Web/assets/34672301/d8ca46f3-acaf-4fdc-a3fc-e41fa7475b67">
-</div>
+</div>   
+
   - Oracle에서는 PK에 대해 자동적으로 인덱스를 생성
   - 그러므로, PK의 값으로 검색하게 되면 검색 속도가 향상
 
