@@ -39,7 +39,7 @@ SELECT COUNT(*)
 FROM 소유자명.SYN_CHANNEL;
 ```
 
-2. CHANNELS 테이블이 있다고 하자. 이 테이블 객체에 대해 SYN_CHANNEL이라는 PUBLIC 시노님을 붙인다.4
+2. CHANNELS 테이블이 있다고 하자. 이 테이블 객체에 대해 SYN_CHANNEL이라는 PUBLIC 시노님을 붙인다.
 ```sql
 CREATE [ON REPLACE] PUBLIC SYNONYM SYN_CHANNEL
 FOR CHANNELS;
