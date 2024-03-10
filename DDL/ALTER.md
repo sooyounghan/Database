@@ -131,7 +131,7 @@ VALUES (17, 107, 50);
 2. 형식
 ```sql
 ALTER TABLE [스키마.]테이블명
-DROP CONSTRAINTS 제약조건명;
+DROP 컬럼명 CONSTRAINTS 제약조건명;
 ```
 
 3. TEST_TABLE30을 생성한다.
