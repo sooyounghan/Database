@@ -20,7 +20,8 @@ GRANT CREATE VIEW TO 계정이름;
 -----
 1. 형식
 ```sql
-CREATE [OR REPLACE] VIEW [스키마명.]뷰명 AS
+CREATE [OR REPLACE] VIEW [스키마명.]뷰명
+AS
 SELECT 문장(서브쿼리);
 ```
 
