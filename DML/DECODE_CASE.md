@@ -28,11 +28,11 @@ FROM EMP;
    - ANALYST : 20%
 
 ```sql
-SELECT EMPNO, ENAME, JOB DECODE(JOB, 'CLERK', SAL * 1.1,
-                                      'SALESMAN', SAL * 1.15,
-                                      'PRESIDENT', SAL * 3,
-                                      'MAMAGER', SAL * 1.05,
-                                      'ANALYST', SAL * 1.2)
+SELECT EMPNO, ENAME, DECODE(JOB, 'CLERK', SAL * 1.1,
+                                  'SALESMAN', SAL * 1.15,
+                                  'PRESIDENT', SAL * 3,
+                                  'MAMAGER', SAL * 1.05,
+                                  'ANALYST', SAL * 1.2)
 FROM EMP;
 ```
 
