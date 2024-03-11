@@ -4,7 +4,7 @@
 1. 값에 따라 변환값이 결정되는 구문
 2. 형식
 ```sql
-DECODE(COL_NAME, expr1, result1, expr2, result2, ... , default) DECODES
+DECODE(COL_NAME, expr1, result1, expr2, result2, ... , default) [DECODES]
 ```
 3. 각 사원의 부서 이름을 가져온다.
    - 10 : 인사과
@@ -46,7 +46,7 @@ CASE WHEN 조건식1 THEN 반환값1
       WHEN 조건식2 THEN 반환값2
       ...
       ELSE 기타값
-END
+END CASE;
 ```
 3. THEN 이하 출력 값들의 데이터 타입은 반드시 일치시켜야 함
 4. THEN 이하 'A', 'B', 'C' 등 문자 타입이면, 모두 일치
