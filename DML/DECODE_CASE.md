@@ -46,7 +46,7 @@ CASE WHEN 조건식1 THEN 반환값1
       WHEN 조건식2 THEN 반환값2
       ...
       ELSE 기타값
-END CASE;
+END [AS 별칭](=[CASE])
 ```
 3. THEN 이하 출력 값들의 데이터 타입은 반드시 일치시켜야 함
 4. THEN 이하 'A', 'B', 'C' 등 문자 타입이면, 모두 일치
