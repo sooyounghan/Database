@@ -6,7 +6,7 @@
 2. NVL2(expr1, expr2, expr3) : expr1이 NULL이 아니면, expr2 출력, NULL이면 expr3 출력
 
 -----
-### COALESCE(expr1, expr2) : 매개변수로 들어오는 표현식에서 NULL이 아닌 첫 번째 표현식 반환
+### COALESCE(expr1, expr2, expr3, ..., exprN) : 매개변수로 들어오는 표현식에서 NULL이 아닌 첫 번째 표현식 반환
 -----
 ```sql
 SELECT EMPNO, SAL, COMM COALESCE(SALARY * COMM, SALARY) AS SALARY;
@@ -14,7 +14,8 @@ FROM EMP;
 ```
 1. SALARY * COMM의 결과값이 NULL이면 SALARY를, NULL이 아니면 SALARY * COMM 값을 반환
 2. NULL과 수식연산자를 이용해 NULL과 연산하면 상대값이 무엇이든 NULL
-
+3. expr1이 NULL이 아니면 expr1 값 반환, NULL이면 expr2 반환, expr2이 NULL이면 expr3..
+   NULL이면 exprN 반환  
 -----
 ### LNNVL(조건식) : 매개변수로 들어오는 조건식 결과가 FALSE이나 UNKNOWN이면 TRUE, TURE이면 FALSE
 -----
