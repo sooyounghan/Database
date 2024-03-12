@@ -46,6 +46,20 @@ FROM EMPLOYEES E INNER JOIN DEPARTMENT D USING (E.DEPARTMENT_ID = D.DEPARTMENT_I
 ```
 
 -----
+### Natural Join
+-----
+1. 테이블 간에 동일한 이름을 가진 열을 찾아서 자동으로 조인
+2. 즉, 공통 열 이름을 찾아서 해당 열을 기준으로 조인
+```sql
+SELECT E.EMPNO, E.ENAME, DEPTNO, D.DNAME
+FROM EMP E NATURAL JOIN DEPT D
+```
+
+3. 동일한 이름을 가진 열을 기준으로 조인하므로 결과 집합에서 중복된 열이 자동으로 제거
+4. 즉, 결과 값은 해당 열이 일치하는 모든 행을 반환
+5. 추가적으로, 조인의 대상이 되는 컬럼에 대해서는 별칭을 붙일 수 없음 (DEPTNO)
+
+-----
 ### ANSI OUTER JOIN
 -----
 1. 기존 문법
