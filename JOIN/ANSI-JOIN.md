@@ -46,7 +46,7 @@ FROM EMPLOYEES E INNER JOIN DEPARTMENT D USING (E.DEPARTMENT_ID = D.DEPARTMENT_I
 ```
 
 -----
-### Natural Join
+### NATURAL JOIN
 -----
 1. 테이블 간에 동일한 이름을 가진 열을 찾아서 자동으로 조인
 2. 즉, 공통 열 이름을 찾아서 해당 열을 기준으로 조인
