@@ -11,7 +11,7 @@
 2. USER-NAME : /as sysdba (데이터베이스 관리자로 연결)
 3. CONN [/AS SYSDBA] : 데이터베이스 관리자로 접근
 4. CONN [SYSTEM] : [시스템] 유저로 접근
-5. SHOW USER(= SELECT * FROM ALL_USERS/DBA_USERS) : 사용 유저 보기 
+5. SELECT * FROM ALL_USERS/DBA_USERS : 사용 유저 보기 
 6. DBA_USERS : 모든 사용자 계정의 정보가 담긴 테이블
 7. 특정 데이터베이스 내 모든 테이블 보기 :  SELECT t * FROM TAB;
 ------
