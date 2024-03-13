@@ -12,7 +12,7 @@ SELECT D.DEPTNO, D.DNAME
 FROM DEPT D
 WHERE EXIST (SELECT *
              FROM EMP E
-             WEHRE D.DEPTNO = E.DEPTNO
+             WHERE D.DEPTNO = E.DEPTNO
              AND E.SAL > 3000)
 ORDER BY D.DNAME;
 ```
