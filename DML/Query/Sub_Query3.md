@@ -39,6 +39,10 @@ FROM DEPT D;
 ### 인라인 뷰 (Inline View)
 -----
 1. FROM 절 내에 들어가는 SubQuery
+
+	- FROM 절은 본래 Table나 View가 올 수 있으나, 서브 쿼리를 FROM 절에 사용 가능
+ 	- 결과적으로 View를 분해하면, 하나의 독립적인 SELECT문 이므로 FROM 절에 사용하는 서브 쿼리도 하나의 View로 볼 수 있기 때문에 붙여진 이름
+
 2. EMP 테이블의 사원번호, 사원이름, 입사일에 대해 입사일을 기준으로 내림차순으로 정렬하여 조회한다.
 ```sql
 SELECT A.*
