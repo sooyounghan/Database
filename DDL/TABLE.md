@@ -85,7 +85,7 @@ CREATE TABLE [스키마.]테이블명 (
 6. LOB 데이터 타입
    - Large Object의 약자로 대용량 데이터를 저장할 수 있는 데이터 타입
    - 문자형 대용량 데이터는 CLOB나 NCLOB, 그래픽/이미지/동영상 등 데이터는 BLOB
-   - BLFILE은 데이터베이스 외부 파일에 대한 로케이터를 저장 (읽기만 가능)
+   - BFILE은 데이터베이스 외부 파일에 대한 로케이터를 저장 (읽기만 가능)
 <div align = "center">
 <img src = "https://github.com/sooyounghan/DataBase/assets/34672301/f74261eb-569c-42d6-b66b-ed9bd6af25ce">
 </div>
