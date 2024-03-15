@@ -96,6 +96,24 @@ CREATE TABLE [스키마.]테이블명 (
    - NULL을 허용하지 않으려면, NOT NULL 구문 명시
 
 -----
+### 테이블 제약 조건 조회
+-----
+* user_constraints는 제약조건을 담는 테이블 객체 (소문자 주의)
+  
+1. 접속한 계정에 대한 테이블의 제약 조건 조회
+```sql
+SELECT *
+FROM user_constraints;
+```
+
+2. 특정 테이블의 제약 조건 조회
+```sql
+SELECT *
+FROM user_constraints
+WHERE TABLE_NAME = '테이블명';
+```
+
+-----
 ### 테이블 생성 예제
 -----
 1. 다음과 같은 정보를 저장하기 위한 테이블을 만든다.
@@ -174,3 +192,22 @@ FROM EMP
 GROUP BY DEPTNO;
 ```
   - 그룹함수로 가져온 데이터에 대해 이름이 없기 때문에, 이름을 정해야함
+
+5. 회원의 번호, 아이디, 비밀번호, 이름, 성별, 등록일을 가지는 MEMBER 테이블을 생성
+   - 아이디와 비밀번호, 이름은 NULL 값이 아니여야 한다.
+   - 아이디는 유일해야한다. (다중 제약조건)
+```sql
+CREATE TABLE MEMBER (
+MEMBER_NO NUMBER(6) CONSTRAINT MEMBER_MEMBER_NO_PK PRIMARY KEY,
+MEMBER_ID VARCHAR2(20) CONSTRAINT MEMBER_MEMBER_NN NOT NULL,
+MEMBER_PASSWORD VARCHAR2(20) CONSTRAINT MEMBER_MEMBER_PASSWORD_NN NOT NULL,
+MEMBER_MNAME VARCHAR2(45) CONSTRAINT MEMBER_MEMBER_MANME_NN NOT NULL,
+MEMBER_GENDER CHAR(1) CONSTRAINT MEMBER_MEMBER_GENDER_CK CHECK(MEMBER_GENDER IN ('M', 'F', 'Z')),
+MEMBER_REGDATE DATE DEFAULT SYSDATE,
+
+CONSTRAINT MEMBER_MEMBER_ID_UK UNIQUE(MEMBER_ID)
+);
+```
+
+   - 제약 조건이 2개 이상 이라면, 한 개는 테이블 레벨 / 한 개는 컬럼 레벨에서도 설정 가능
+   - NULL 제약 조건은 컬럼 레벨에서만 가능
