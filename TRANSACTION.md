@@ -1,16 +1,16 @@
 -----
 ### 트랜잭션 (Transaction)
 -----
-1. 최종 결과를 내기까지 위한 하나의 작업 단위를 의미
+1. 최종 결과를 내기까지 위한 하나의 작업 단위를 의미 (연속적인 DML(조작어, INSERT, UPDATE, DELETE, SELECT) 집합)
 2. 개발자가 전달한 INSERT / UPDATE / DELETE 문을 메모리상에서만 수행하고, 디스크에는 미반영
    - TABLE과 관련된 작업은 바로 디스크에 반영
-3. 이는 실수로 인한 데이터 유실을 막기 위함
+3. 이는 실수로 인한 데이터 유실을 막기 위함 (즉, 데이터 일관성 유지, 안정적 복구를 위함)
 4. 따라서, 데이터베이스를 조작하는 작업이 완료되고, 모두 정상적으로 되었다면, 이를 디스크에 반영
-5. 작업이 시작되고 디스크에 반영될 때까지의 작업의 단위
+5. 작업이 시작되고 디스크에 반영될 때까지의 작업의 단위 (논리적인 작업 단위)
 6. 트랜잭션이 완료되면 디스크에 반영되어 저장
 
 -----
-### 트랜잭션 (Transaction) 명령어
+### 트랜잭션 (Transaction) 명령어 - TCL(Transaction Control Language)
 -----
 1. COMMIT : 트랜잭션을 완료하고 디스크에 마지막으로 반영 (복구 불가)
 ```sql
@@ -37,3 +37,12 @@ SAVEPOINT 세이브포인트명;
 ```sql
 TRUNCATE TABLE [스키마명.]테이블명;
 ```
+
+-----
+### Auto-Commit / Auto-Rollback
+-----
+1. Auto-Commt : 자동으로 Commit 실행
+   - 정상적인 종료 (Exit, Quit 등)
+   - DDL : CREATE, DROP, ALTER, TRUNCATE, DCL(GRANT, REVOKE)
+
+2. Auto-Rollback : 비정상적인 종료
