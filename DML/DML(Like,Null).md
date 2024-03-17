@@ -83,15 +83,18 @@ WHERE ENAME LIKE '____';
 1. Oracle에서 NULL : 정해져 있지 않은 값 또는 무한대의 값을 의미
 2. = 이나 <>를 통해 컬럼의 값이 NULL 인지 연산할 수 없음
 3. IS NULL 또는 IS NOT NULL을 통해 NULL 비교
-
-4. 사원 중에 커미션을 받지 않는 사원의 사원번호, 이름, 커미션을 가져온다.
+4. 묵시적 NULL과 명시적 NULL
+    - 명시적 NULL : NULL 또는 ''로 값을 입력했을 때 이로 인식
+    - 묵시적 NULL : INSERT문에서 생략된 COLUMN에 대해서 묵시적 NULL 적용
+        
+5. 사원 중에 커미션을 받지 않는 사원의 사원번호, 이름, 커미션을 가져온다.
 ```sql
 SELECT EMPNO, ENAME, COMM
 FROM EMP
 WHERE COMM IS NULL;
 ```
 
-5. 회사 대표(직속상관이 없는 사람)의 이름과 사원번호를 가져온다.
+6. 회사 대표(직속상관이 없는 사람)의 이름과 사원번호를 가져온다.
 ```sql
 SELECT ENAME, EMPNO
 FROM EMP
