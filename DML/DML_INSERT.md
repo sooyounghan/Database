@@ -81,6 +81,10 @@ INSERT INTO EMP01(EMPNO, ENAME, JOB) VALUES(7777, '고길동', NULL);
 ```
 
 -----
+### DEFAULT로 설정한 COLUMN에 대해서 묵시적 NULL로 입력하면 설정된 기본값으로 적용
+-----
+
+-----
 ### INSEERT : Sub-Query로 데이터 저장
 -----
 ```sql
