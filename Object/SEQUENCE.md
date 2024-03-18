@@ -15,7 +15,7 @@ NOCYCLE | CYCLE
 NOCACHE | CACHE;
 ```
   - INCREMENT BY 증감숫자 : 증감숫자는 0이 아닌 정수, 양수이면 증가, 음수이면 감소(디폴트 : 1)
-  - START WITH 시작숫자 : 시작 값으로, 절대 최소 값보다 작을 수 없음
+  - START WITH 시작숫자 : 시작 값으로, 절대 최소 값보다 작을 수 없음 (한 번 설정하면 변경 불가)
   - NOMINVALUE : 1
   - MINVALUE 최솟값 : 시퀀스가 가질 수 있는 최소값. 최솟값은 시작숫자와 작거나 같아야 하고, MAXVALUE보다 작아야함
   - NOMAXVALUE : 10의 27승
