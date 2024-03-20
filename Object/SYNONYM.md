@@ -19,6 +19,10 @@ FOR [스키마명.]객체명;
 ```sql
 DROP [PUBLIC] SYNONYM [스키마명.]시노님명;
 ```
+5. 현재 DB내 시노님 객체 확인
+```sql
+ SELECT * FROM user_synonyms;
+```
 
 -----
 ### 시노님(Synonym) 예제
