@@ -15,20 +15,29 @@
 6. DBA_USERS : 모든 사용자 계정의 정보가 담긴 테이블
 7. 특정 데이터베이스 내 모든 테이블 보기 :  SELECT t * FROM TAB;
 8. 유저 삭제 : DROP USER 유저명;
+
+9. 주의사항
+- 오라클 접속 전 : sqlplus 계정명/비번
+  + sys 계정 접근 : sqlplus "/as sysdba" (비밀번호 노출 방지를 위한 옵션)
+    
+- 오라클 접속 후 : conn 계정명/비번
+  + scott 계정 접근 : conn scott/비밀번호
+  + sys 계정 접근 : conn /as sysdba
+
 ------
-9. hr계정 : 오라클이 교육용으로 만든 계정으로 기본적으로 잠겨있으므로, 계정 잠금 해제 필요
+10. hr계정 : 오라클이 교육용으로 만든 계정으로 기본적으로 잠겨있으므로, 계정 잠금 해제 필요
   - 계정해제 :  ALTER USER hr ACCOUNT UNLOCK;
   - 계정비밀번호 지정 : ALTER USER hr INDETIFIED BY 비밀번호;
   - CONN hr/hr(비밀번호) : hr 계정에 접근
 -----
-10. SPOOL
+11. SPOOL
   - 시작 : SPOOL 경로/생성할 파일명
   - 종료 : SPOOL OFF (해당 지정파일에 저장)
   - BUFFER 내 / 의미 : 쿼리문의 ;와 동일하며, 버퍼에서는 오직 1개의 쿼리문만 실행가능
   - 버퍼 창 불러오기 : ed
   - 저장 후 실행 : 커멘드 창 : /
 -----
-11. RECYCLE_BIN TABLE : 삭제된 파일을 임시 보관하는 휴지통 테이블
+12. RECYCLE_BIN TABLE : 삭제된 파일을 임시 보관하는 휴지통 테이블
     
    - OBJECT_NAME : 삭제된 테이블의 Object 이름 
    - ORIGINAL_NAME : 삭제된 테이블의 원래 이름 
@@ -39,7 +48,7 @@
      * purge : 완전 삭제
    - 휴지통 완전 삭제 : PURGE RECYCLEBIN;
 -----
-12. SQL 파일을 sqlplus에서 불러오기 : sqlpuls 실행 후, @파일주소\sql파일
+13. SQL 파일을 sqlplus에서 불러오기 : sqlpuls 실행 후, @파일주소\sql파일
 
 -----
 ### 데이터의 구성
