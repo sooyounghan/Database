@@ -34,7 +34,12 @@ DROP SEQUENCE [스키마명.]시퀀스명;
    - SEQUENCE명.NEXTVAL : 다음 시퀀스 값을 가져옴
    - SEQUENCE명.CURRVAL : 현재 시퀀스 값을 가져옴
    - 현재 시퀀스 값을 가져오기 위해서는 반드시 다음 시퀀스 값을 먼저 가져와야 현재 시퀀스 값을 가져올 수 있음
-   
+
+7. DBMS 내 시퀀스 조회
+```sql
+ SELECT * FROM user_sequences;
+```
+
 -----
 ### 예제
 -----
