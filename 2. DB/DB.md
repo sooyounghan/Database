@@ -63,6 +63,7 @@
 </div>   
 
 <SQL = RDBMS>
+
 -----
 ### Table = Relationship
 ----
@@ -152,22 +153,3 @@
 ### DataBase 생성
 -----
 - CREATE DATABASE 데이터베이스명 default character set UTF8;
-
------
-### DataBase 내 USER 생성
------
-      - CREATE USER '[계정]'@'[호스트]'(Oracle : '[유저명]') identified by '[암호]';
-      - GRANT [권한목록] ON [데이터베이스].[대상]([대상]) TO '[계정]'@'[호스트]'(Oracle : '[유저명]')
-      - GRANT 쿼리 : MySQL, DBMS 계정에 권한을 부여할 때 사용하는 명령어
-      - ALL PRIVILEGES : 모든 권한 (INSERT, UPDATE, DELETE, CREATE, DROP)
-1. LocalHost로 접근하는 계정 생성
-   - CREATE USER 'jspexam'@'localhost' identified by 'jsppw';
-   - GRANT ALL PRIVILEGES ON 'chapt14.*' TO 'jspexam'@'localhost'
-   - localhost에서 해당 계정으로 접근할 때 해당 암호를 사용한다는 의미
-     
-2. 모든 호스트(%)에서 접근하는 계정 생성
-   - CREATE USER 'jspexam'@'%' identified by 'jsppw';
-   - GRANT ALL PRIVILEGES ON 'chapt14.*' TO 'jspexam'@'%'
-   - 호스트 값이 '%'이면, 모든 호스트에서 해당 계정으로 접근할 때 해당 암호를 사용
-
-3. Localhost와 다른 호스를 구분하므로 사용자 계정으로 생성할 때는 나눠서 각각 생성
