@@ -20,7 +20,7 @@
    - 데이터 표준화 가능
    - 데이터의 논리적, 물리적 독립성
    - 용이한 데이터 접근
-   - 데이터 동간 절약
+   - 데이터 공간 절약
    
 -----
 ### RDBMS (Relational DataBase Management System)
