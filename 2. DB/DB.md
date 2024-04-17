@@ -127,15 +127,15 @@
 2. 레코드 추가 및 삭제, 데이터를 변경할 때 사용
 3. SELECT문 : 데이터 검색에 사용되나 DML 또는 질의어(SQL)로 분리되기도 함
 
-<div align = "center">
-<img src="https://github.com/sooyounghan/Web/assets/34672301/6b69e0cc-c00c-4a08-af0d-40b41542f6e6">
-</div>   
 
 -----
 ### DCL (Data Control Language)
 ----
 1. 데이터에 대한 액세스를 제어하기 위한 언어
 2. 데이터베이스 객체나 데이터에 대한 권한 관리에 사용
+<div align = "center">
+<img src="https://github.com/sooyounghan/Web/assets/34672301/6b69e0cc-c00c-4a08-af0d-40b41542f6e6">
+</div>   
 
 -----
 ### TCL (Transaction Contorl Language)
