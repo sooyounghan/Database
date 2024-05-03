@@ -6,7 +6,7 @@
 SELECT [테이블명.]컬럼명1 ...
 FROM [데이터베이스명.]테이블명
 WHERE [조건]
-ORDER BY 컬럼명 [ASC | DESC]
+ORDER BY 컬럼명 [ASC | DESC];
 ```
   - 컬럼명을 기준을 정렬 가능
 2. ORDER BY 컬럼명 ASC : 오름차순 정렬 (ASC는 생략 가능)
