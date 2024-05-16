@@ -67,9 +67,9 @@ WHERE T1.EMP_NO = T2.EMP_NO  AND T1.TITLE = 'Senior Staff' AND T2.TITLE = 'Staff
 SELECT EMP_NO
 FROM TITLES
 WHERE TITLE = 'Staff' AND 
-	  EMP_NO NOT IN (SELECT EMP_NO
-					 FROM TITLES
-					 WHERE TITLE = 'Senior Staff');
+      EMP_NO NOT IN (SELECT EMP_NO
+		     FROM TITLES
+		     WHERE TITLE = 'Senior Staff');
 ```
 <div align="center">
 <img src="https://github.com/sooyounghan/Data-Base/assets/34672301/a7b52a71-b231-4571-95d0-745ff7a37add">
