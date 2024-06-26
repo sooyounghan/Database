@@ -9,7 +9,7 @@
   - A. DECIMAL 데이터 형식은 정확한 수치를 저장
   - B. FLOAT, DOUBLE은 근사치의 숫자를 저장 (대신, 상당한 큰 숫자를 저장할 수 있음)
   - C. 소수점이 들어간 실수를 저장하려면 되도록 DECIMAL 사용하는 것이 바람직
-  - D. MySQL은 부호 없는 정수를 지원 (UNSIGNED 예약어를 뒤에 붙여줌
+  - D. MySQL은 부호 없는 정수를 지원 (UNSIGNED 예약어를 뒤에 붙여줌)
     + TINYINT : 0 ~ 255
     + SMALLINT : 0 ~ 65535
     + MIDIUMINT : 0 ~ 16777215
@@ -114,7 +114,7 @@ SELECT @myVar4, name FROM userTbl WHERE height > 100;
 
   - LIMIT에는 원칙적으로 변수를 사용할 수 없으나 PREPARE와 EXECUTE문을 활용해 변수 활용 가능
 ```sql
-@SET @myVal1 = 3;
+SET @myVal1 = 3;
 
 PREPARE myQuery
 FROM 'SELECT name, height FROM userTbl ORDER BY height LIMIT ?';
