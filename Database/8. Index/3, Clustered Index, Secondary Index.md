@@ -4,7 +4,7 @@
 1. 인덱스가 없이 테이블 생성하고, 데이터 입력
 ```sql
 CREATE DATABASE IF NOT EXISTS testdb;
-USER testdb;
+USE testdb;
 DROP TABLE IF EXISTS clustertbl;
 
 CREATE TABLE clusterTBL
@@ -71,28 +71,28 @@ CREATE DATABASE IF NOT EXISTS testdb;
 USE testdb;
 
 DROP TABLE IF EXISTS secondarytbl;
-CREATE TABLE secondarytbl - Secondary Table 약자
+CREATE TABLE secondarytbl -= Secondary Table 약자
 ( userID  CHAR(8),
   name    VARCHAR(10)
 );
 
-INSERT INTO mixedtbl VALUES('LSG', '이승기');
-INSERT INTO mixedtbl VALUES('KBS', '김범수');
-INSERT INTO mixedtbl VALUES('KKH', '김경호';
-INSERT INTO mixedtbl VALUES('JYP', '조용필');
-INSERT INTO mixedtbl VALUES('SSK', '성시경');
-INSERT INTO mixedtbl VALUES('LJB', '임재범');
-INSERT INTO mixedtbl VALUES('YJS', '윤종신');
-INSERT INTO mixedtbl VALUES('EJW', '은지원');
-INSERT INTO mixedtbl VALUES('JKW', '조관우');
-INSERT INTO mixedtbl VALUES('BBK', '바비킴');
+INSERT INTO secondarytbl VALUES('LSG', '이승기');
+INSERT INTO secondarytbl VALUES('KBS', '김범수');
+INSERT INTO secondarytbl VALUES('KKH', '김경호';
+INSERT INTO secondarytbl VALUES('JYP', '조용필');
+INSERT INTO secondarytbl VALUES('SSK', '성시경');
+INSERT INTO secondarytbl VALUES('LJB', '임재범');
+INSERT INTO secondarytbl VALUES('YJS', '윤종신');
+INSERT INTO secondarytbl VALUES('EJW', '은지원');
+INSERT INTO secondarytbl VALUES('JKW', '조관우');
+INSERT INTO secondarytbl VALUES('BBK', '바비킴');
 ```
 <div align="center">
 <img src="https://github.com/user-attachments/assets/56dcce98-a930-469e-ac55-a5b8e9ca1438">
 </div>
 
   - 위 그림과 동일한 구조 형성
-  - Unique 제약 조건은 보조 인덱스를 생성하는 것을 확인했으므로, userID열에 Unique 제약 조건 지정`
+  - Unique 제약 조건은 보조 인덱스를 생성하는 것을 확인했으므로, userID열에 Unique 제약 조건 지정
 ```sql
 ALTER TABLE secondarytbl
 ADD CONSTRAINT UK_secondarytbl_userID
@@ -258,7 +258,7 @@ SELECT addr FROM mixedtbl WHERE name = '임재범';
 ```
 
   - 💡 다음과 같은 순서로 검색
-    + (페이지번호 10번 읽음) 보조 인덱스의 루트 페이지에서 '은지원'볻 큰 값이므로 200번 페이지에 있다는 것 확인
+    + (페이지번호 10번 읽음) 보조 인덱스의 루트 페이지에서 '은지원'보다 큰 값이므로 200번 페이지에 있다는 것 확인
     + 💡 (페이지번호 200번 읽음) '임재범'은 클러스터형 인덱스의 키 값이 LJB임을 확인한 후, 무조건 클러스터 인덱스의 루트 페이지로 가서 찾음
     + (페이지번호 20번 읽음) 'LJB'는 'KBS'보다 크고, 'SSK'보다 작으므로 1001번 페이지에 있는 것 확인
     + (페이지번호 1001번 읽음) 'LJB' 값을 찾고, 그 주소인 '서울을 알아냄'
