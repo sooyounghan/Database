@@ -71,7 +71,7 @@ CREATE DATABASE IF NOT EXISTS testdb;
 USE testdb;
 
 DROP TABLE IF EXISTS secondarytbl;
-CREATE TABLE secondarytbl -= Secondary Table 약자
+CREATE TABLE secondarytbl -- Secondary Table 약자
 ( userID  CHAR(8),
   name    VARCHAR(10)
 );
