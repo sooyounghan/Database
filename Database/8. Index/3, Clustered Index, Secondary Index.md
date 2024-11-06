@@ -8,7 +8,8 @@ USE testdb;
 DROP TABLE IF EXISTS clustertbl;
 
 CREATE TABLE clusterTBL
-( userID      char(8) ,
+(
+  userID      char(8) ,
   userName    varchar(10) 
 );
 
@@ -45,8 +46,7 @@ FROM clustertbl;
    - userID를 Primary Key로 지정하면 클러스터형 인덱스로 구성
 ```sql
 ALTER TABLE clustertbl
-ADD CONSTRAINT PK_clustertbl_userID
-PRIMARY KEY (userID);
+ADD CONSTRAINT PK_clustertbl_userID PRIMARY KEY (userID);
 ```
   - 테이블 다시 확인
 <div align="center">
@@ -61,7 +61,7 @@ PRIMARY KEY (userID);
 
   - 클러스터형 인덱스를 구성하기 위해 행 데이터를 해당 열로 정렬한 후 루트 페이지를 다시 만들게 됨
   - 클러스터형 인덱스는 루트 페이지와 리프 페이지 (중간 페이지가 있다면 중간 페이지도 포함)로 인덱스가 구성
-    + 동시에, 인덱스 페이지의 리프 페이지는 데이터 그 자체임
+    + 💡 동시에, 인덱스 페이지의 리프 페이지는 데이터 그 자체임
 
 5. 클러스터형 인덱스는 데이터의 검색 속도가 보조 인덱스보다 더 빠름
 
@@ -72,7 +72,8 @@ USE testdb;
 
 DROP TABLE IF EXISTS secondarytbl;
 CREATE TABLE secondarytbl -- Secondary Table 약자
-( userID  CHAR(8),
+(
+  userID  CHAR(8),
   name    VARCHAR(10)
 );
 
@@ -95,8 +96,7 @@ INSERT INTO secondarytbl VALUES('BBK', '바비킴');
   - Unique 제약 조건은 보조 인덱스를 생성하는 것을 확인했으므로, userID열에 Unique 제약 조건 지정
 ```sql
 ALTER TABLE secondarytbl
-ADD CONSTRAINT UK_secondarytbl_userID
-UNIQUE (userID);
+ADD CONSTRAINT UK_secondarytbl_userID UNIQUE (userID);
 ```
 
   - 데이터 순서 확인
@@ -194,7 +194,8 @@ USE testdb;
 
 DROP TABLE IF EXISTS mixedtbl;
 CREATE TABLE mixedtbl
-( userID  CHAR(8) NOT NULL,
+(
+  userID  CHAR(8) NOT NULL,
   name    VARCHAR(10) NOT NULL,
   addr    char(2)
 );
@@ -219,8 +220,7 @@ INSERT INTO mixedtbl VALUES('BBK', '바비킴', '서울');
 3. 이 테이블의 userID열에 클러스터형 인덱스를 생성 (Primary Key로 지정하면, Default로 클러스터형 생성)
 ```sql
 ALTER TABLE mixedtbl
-ADD CONSTRAINT PK_mixedtbl_userID
-PRIMARY KEY (userID);
+ADD CONSTRAINT PK_mixedtbl_userID PRIMARY KEY (userID);
 ```
 <div align="center">
 <img src="https://github.com/user-attachments/assets/f8880e4f-a92a-4c0f-8e15-7c30d308960b">
@@ -229,8 +229,7 @@ PRIMARY KEY (userID);
 4. 이번에는 UNIQUE 제약 조건 추가
 ```sql
 ALTER TABLE mixedtbl
-ADD CONSTRAINT UK_mixedtbl_name
-UNIQUE (name);
+ADD CONSTRAINT UK_mixedtbl_name UNIQUE (name);
 ```
 
 5. 클러스터형 인덱스와 보조 인덱스 생성 여부 확인
@@ -268,7 +267,7 @@ SELECT addr FROM mixedtbl WHERE name = '임재범';
    - 클러스터형 인덱스와 보조 인덱스를 분리해서 서로 관련 없이 구성하면 검색에서는 더 우수한 성능을 보일 것
    - 만약, 'MMI 멍멍이 서울'이라는 행이 추가되면, 클러스터형 인덱스는 페이지 분할 등의 작업 발생 (기존 방식과 동일)
    - 보조 인덱스에서도 100번 페이지만 '멍멍이 MMI'이 추가되면서 약간의 데이터가 변경될 뿐 그렇게 큰 변화가 발생하지 않음
-   - 💡 하지만, 만약, 보조 인덱스의 리프 페이지가 '데이터 페이지의 주소값'으로 되어있다면?
+   - 💡💡💡 하지만, 만약, 보조 인덱스의 리프 페이지가 '데이터 페이지의 주소값'으로 되어있다면?
      + 💡 데이터의 삽입으로 클러스터형 인덱스의 리프 페이지(=데이터 페이지)가 재구성
      + 💡 따라서, '데이터 페이지의 번호' 및 '#오프셋'이 대폭 변경 되어 보조 인덱스 역시 많이 부분이 재구성되어야 하므로, 엄청난 시스템 부하를 발생시킬 소지 존재
    - 따라서, 보조 인덱스와 클러스터형 인덱스가 하나의 테이블에 존재하면 위와 같이 구성
