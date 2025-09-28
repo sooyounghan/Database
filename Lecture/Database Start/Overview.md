@@ -154,7 +154,7 @@ DROP DATABASE my_shop;
    - SHOW DATABASES; 로 사라진 데이터베이스를 확인
 <div align="center">
 <img src="https://github.com/user-attachments/assets/50808676-1ce3-44b2-a226-77d6fa926e6d">
-</div>sys
+</div>
 
    - my_shop 데이터베이스가 제거된 것을 확인할 수 있음
 
