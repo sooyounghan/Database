@@ -191,3 +191,114 @@ CREATE TABLE sample (
 <div align="center">
 <img src="https://github.com/user-attachments/assets/f9954c37-b79e-44f0-bfd4-8109914b41a1">
 </div>
+
+-----
+### 데이터베이스의 기본, CRUD 맛보기
+-----
+1. 테이블 안에 실제 데이터를 넣고(Create), 읽고(Read), 수정하고(Update), 삭제하는 (Delete) 방법
+   - 이 네 가지 기본 작업을 묶어서 CRUD라고 부르며, 데이터 관리의 가장 핵심적인 기능
+   
+2. INSERT : 데이터 넣기 (Create)
+   - INSERT 는 테이블에 새로운 행(Row)을 추가하는 명령어
+   - sample 테이블에 신상품을 하나 등록
+```sql
+INSERT INTO sample (product_id, name, price, stock_quantity, release_date)
+VALUES (1, '프리미엄 청바지', 59900, 100, '2025-06-11');
+```
+   
+   - 이 구문은 "sample 테이블의 product_id, name, price, stock_quantity, release_date 열에 각각 1 , '프리미엄 청바지' , 59900 , 100 , '2025-06-11' 값을 넣어서 새로운 행을 추가해라" 라는 의미
+   - 숫자는 그냥 사용하면 되고, 문자열과 날짜는 작은따옴표(') 로 감싸주어야 함
+
+   - 실행 결과
+```
+1 row affected (0.00 sec)
+```
+   - 1개의 행이 저장되었다는 뜻
+
+3. SELECT : 데이터 꺼내보기 (Read)
+   - SELECT 는 테이블에 저장된 데이터를 조회하는 명령어
+   - sample 테이블에 있는 모든 데이터를 보고 싶다면 * (별표, asterisk)를 사용
+   - * 는 '모든 열(컬럼)'을 의미
+```sql
+SELECT * FROM sample;
+```
+   - SELECT : 원하는 열(컬럼)을 선택
+   - FROM : 원하는 테이블을 선택
+   - 실행 결과
+<div align="center">
+<img src="https://github.com/user-attachments/assets/2602dc68-8083-4702-987a-ef27d2050409">
+</div>
+
+   - 이 명령은 sample 테이블의 모든 열과 모든 행을 보여줌
+   - 방금 우리가 INSERT 한 '프리미엄 청바지' 데이터가 보일 것
+   - 만약 상품의 이름과 가격만 보고 싶다면, 보고 싶은 열의 이름을 SELECT 다음에 직접 지정하면 되며, 이때 쉼표(,)로 각각의 열(컬럼)을 구분
+   - 실행 결과
+<div align="center">
+<img src="https://github.com/user-attachments/assets/f990878e-65f4-4e34-b1e9-19e2f1f23c48">
+</div>
+
+4. UPDATE : 데이터 바꾸기 (Update)
+   - UPDATE 는 이미 저장된 데이터의 내용을 수정하는 명령어
+   - '프리미엄 청바지'의 가격을 낮추어서 40000원으로 변경
+```sql
+UPDATE sample
+SET price = 40000
+WHERE product_id = 1;
+```
+   - 이 구문은 "sample 테이블에서, product_id 가 1 인 행을 찾아서, 그 행의 price 값을 40000 으로 변경해라"라는 의미
+   - UPDATE : 데이터를 변경할 테이블을 지정
+   - SET : 변경할 열(컬럼)과 그 값을 지정
+   - WHERE : 변경할 행(로우)을 선택
+   - 실행 결과
+```
+1 row(s) affected Rows matched: 1 Changed: 1 Warnings: 0
+```
+   - WHERE 조건에 맞는 1개 행(Rows matched: 1)을 찾아 그중 1개 행의 데이터를 변경(Changed: 1)했음을 의미
+   - SELECT * FROM sample; 로 다시 조회해 보면 가격이 40000원으로 변경된 것을 확인
+   - 실행 결과
+<div align="center">
+<img src="https://github.com/user-attachments/assets/85fcb438-2d2a-4e23-a5bf-62d0a535b26c">
+</div>
+
+5. DELETE : 데이터 지우기 (Delete)
+   - DELETE 는 테이블에서 특정 행을 삭제하는 명령어
+   - '프리미엄 청바지' 상품을 단종시켜서 삭제
+ ```sql
+ DELETE FROM sample
+ WHERE product_id = 1;
+ ```
+   - 이 구문은 " sample 테이블에서, product_id 가 1 인 행을 삭제해라" 라는 의미
+   - DELETE FROM : 삭제할 테이블을 지정  
+   - WHERE : 삭제할 행(로우)을 선택
+   - 실행 결과
+```
+1 row affected (0.00 sec)
+```
+   - 1개의 행이 성공적으로 삭제되었음을 의미
+
+   - 삭제 확인 : SELECT * FROM sample; 로 다시 조회해 보면 데이터가 사라진 것을 확인할 수 있음
+```
+0 row(s) returned
+```
+
+-----
+### 참고 : 데이터베이스의 대소문자 구분
+-----
+1. SELECT, FROM, CREATE 같은 SQL 키워드들은 대소문자를 구분하지 않음
+   - 따라서 select, SELECT, SelecT 는 모두 같은 뜻
+2. 하지만 우리가 직접 지정한 테이블 명, 컬럼 명은 DBMS 종류나 서버 환경, 또는 설정에 따라 대소문자를 구분하기도 함
+   - 따라서 sample, SAMPLE이 다른 결과를 보일 수 있음
+   - 이러한 혼란을 피하기 위해 실무에서는 보통 같은 규칙을 따름
+
+3. SQL 키워드는 대문자로, 이름은 소문자로, 즉, SELECT, FROM, CREATE 같은 SQL 예약어는 대문자로 작성하고, products, customer_id와 같이 우리가 직접 짓는 테이블 / 열 이름은 소문자로 작성하는 것이 일반적인 관례(convention)
+
+   - 이 방식의 장점은 가독성이 좋다는 것
+   - 하지만 이렇게 하면 SQL을 작성할 때 대소문자를 중간에 계속 변환해야 하기 때문에 실무에서는 그냥 모두
+소문자를 사용하는 경우도 많음
+
+4. 이름은 소문자와 언더스코어(_) 조합으로, 즉, my_shop , order_details 처럼 단어를 구분하는 언더스코어를 사용해 이름을 지음
+   - 이렇게 하면 어떤 상황에도 일관되게 동작하는 코드를 작성할 수 있음
+   - 데이터 자체는 대소문자를 구분 : SELECT * FROM customers WHERE name = 'kim' 과 SELECT * FROM customers
+WHERE name = 'KIM' 은 다른 결과가 나옴
+
+5. 💡 결론적으로, "어떤 환경에서든 동일하게 작동하는 코드를 만들기 위해, 데이터베이스와 테이블, 열 이름은 항상 소문자로 작성하는 습관을 들이는 것이 가장 좋음" 이 원칙만 지키면 대소문자 문제로 골치 아플 일은 없을 것이
