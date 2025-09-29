@@ -295,7 +295,7 @@ WHERE product_id = 1;
    - 이 방식의 장점은 가독성이 좋다는 것
    - 하지만 이렇게 하면 SQL을 작성할 때 대소문자를 중간에 계속 변환해야 하기 때문에 실무에서는 그냥 모두 소문자를 사용하는 경우도 많음
 
-4. 이름은 소문자와 언더스코어(_) 조합으로, 즉, my_shop , order_details 처럼 단어를 구분하는 언더스코어를 사용해 이름을 지음
+4. 이름은 소문자와 언더스코어(_) 조합으로, 즉, my_shop, order_details 처럼 단어를 구분하는 언더스코어를 사용해 이름을 지음
    - 이렇게 하면 어떤 상황에도 일관되게 동작하는 코드를 작성할 수 있음
    - 데이터 자체는 대소문자를 구분 : SELECT * FROM customers WHERE name = 'kim' 과 SELECT * FROM customers WHERE name = 'KIM' 은 다른 결과가 나옴
 
