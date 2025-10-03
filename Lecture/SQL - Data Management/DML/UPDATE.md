@@ -67,7 +67,7 @@ SELECT @@SQL_SAFE_UPDATES;
 ```sql
 UPDATE products
 SET price = 990
-WHERE name = '베이직 반팔 티셔츠'; -- name 컬럼을 사용했다.
+WHERE name = '베이직 반팔 티셔츠'; -- name 컬럼을 사용
 ```
    - 실행 결과
 ```
