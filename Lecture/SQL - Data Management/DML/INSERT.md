@@ -2,7 +2,7 @@
 ### DML - 등록
 -----
 1. INSERT는 테이블에 새로운 데이터 행(row)을 추가하는 명령어
-   - INSERT 문의 기본 문법은 다음과 같다.
+   - INSERT 문의 기본 문법
 ```sql
 INSERT INTO table_name (column1, column2, column3, ...)
 VALUES (value1, value2, value3, ...);
