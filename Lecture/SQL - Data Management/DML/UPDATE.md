@@ -82,9 +82,10 @@ the option in Preferences -> SQL Editor and reconnect.
       + 애플리케이션 (커넥션) : 기본적으로 OFF (0)
       + MySQL 워크벤치 : 기본적으로 ON (1)
         
-   - 다음 문구를 실행하면 안전 업데이트 모드의 설정을 임시로 변경할 수 있다.
+   - 다음 문구를 실행하면 안전 업데이트 모드의 설정을 임시로 변경할 수 있음
 ```sql
 SET SQL_SAFE_UPDATES = 0; -- 안전 업데이트 모드 끄기
+
 SET SQL_SAFE_UPDATES = 1; -- 안전 업데이트 모드 활성화
 ```
 
