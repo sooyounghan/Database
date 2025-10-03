@@ -34,7 +34,7 @@
    - 제약 조건은 데이터의 무결성을 보장하기 위해 테이블에 특정 규칙을 강제하는 장치
    - NOT NULL은 값이 비어있는 것을 허용하지 않음
    - UNIQUE는 중복된 값을 허용하지 않음
-   - PRIMARY KEY는 테이블의 각 행을 유일하게 식별하며 NOT NULL 과 UNIQUE 특징을 모두 가짐
+   - PRIMARY KEY는 테이블의 각 행을 유일하게 식별하며 NOT NULL과 UNIQUE 특징을 모두 가짐
    - FOREIGN KEY는 테이블 간의 관계를 설정하여 참조 무결성을 강제
    - DEFAULT는 값 미지정 시 기본값을 설정
    - CHECK는 특정 조건을 만족하는 값만 입력 및 변경을 허용
