@@ -62,8 +62,8 @@ SELECT @@SQL_SAFE_UPDATES;
 ```
    - 실행 결과 : 1
    - 실행 결과 1은 안전 업데이트 모드가 활성화 상태이고, 0은 비활성화 상태
-   - 안전 업데이트 모드 활성화 상태에서는 데이터를 변경하거나 삭제할 때 WHERE 절에 기본 키 컬럼을 반드시 지정해야 함 (또는 LIMIT 를 사용해서 변경하거나 삭제할 데이터의 양을 조절해야 함)
-   - 그래서 기본 키 컬럼을 사용하지 않은 다음과 같은 SQL도 실행이 되지 않음
+   - 💡 안전 업데이트 모드 활성화 상태에서는 데이터를 변경하거나 삭제할 때 WHERE 절에 기본 키 컬럼을 반드시 지정해야 함 (또는 LIMIT 를 사용해서 변경하거나 삭제할 데이터의 양을 조절해야 함)
+   - 💡 그래서 기본 키 컬럼을 사용하지 않은 다음과 같은 SQL도 실행이 되지 않음
 ```sql
 UPDATE products
 SET price = 990
@@ -90,8 +90,8 @@ SET SQL_SAFE_UPDATES = 1; -- 안전 업데이트 모드 활성화
 ```
 
    - MySQL 워크벤치의 기본 설정을 변경하고 싶은 경우
-      + 윈도우 : 메뉴바 Edit Preference SQL Editor 맨 아래의 Safe Updates 체크 해제
-      + MAC : 메뉴바 MySQLWorkbench Settings... SQL Editor 맨 아래의 Safe Updates 체크 해제
+      + 윈도우 : 메뉴바 Edit → Preference → SQL Editor 맨 아래의 Safe Updates 체크 해제
+      + MAC : 메뉴바 MySQLWorkbench → Settings... → SQL Editor 맨 아래의 Safe Updates 체크 해제
    - 안전 모드를 제거하고 다시 UPDATE 문을 실행
 ```sql
 SET SQL_SAFE_UPDATES = 0; -- 안전 모드 제거
