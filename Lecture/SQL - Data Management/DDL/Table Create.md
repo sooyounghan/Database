@@ -53,7 +53,7 @@ CREATE TABLE products (
    - product_id : 상품을 식별하는 기본 키, AUTO_INCREMENT를 사용
    - price : 금액이므로 INT 타입을 사용했고, 필수 값이므로 NOT NULL
    - stock_quantity : 재고 수량으로, 필수 값이지만, 값을 넣지 않으면 기본적으로 0이 되도록 DEFAULT를 설정
-   - description : 상품 설명은 길 수 있으므로 TEXT 타입을 사용, 필수는 아니므로 NOT NULL 제약 조건을 걸지 않ㄹ음
+   - description : 상품 설명은 길 수 있으므로 TEXT 타입을 사용, 필수는 아니므로 NOT NULL 제약 조건을 걸지 않음
 
 5. 주문 테이블 ( orders )
 ```sql
