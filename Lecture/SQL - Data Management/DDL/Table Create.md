@@ -9,7 +9,7 @@
      + 예제를 단순화 하기 위해 한 번의 주문 시에 한 종류의 상품만 주문할 수 있음
      + 한 종류의 상품을 여러 개 주문하는 것은 가능
 
- 2. 고객 테이블 ( customers )
+ 2. 고객 테이블 (customers)
 ```sql
 CREATE TABLE customers (
      customer_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -40,7 +40,7 @@ CREATE TABLE test (
    - DEFAULT CURRENT_TIMESTAMP : 새로운 데이터 행(row)이 추가될 때, 해당 컬럼에 별도의 값을 지정하지 않으면 현재의 날짜와 시간이 자동으로 입력
    - DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP : 새로운 데이터 행(row)이 추가될때는 물론이고, 같은 행의 컬럼 값이 변경되어 업데이트될 때, 이 컬럼의 값은 현재 날짜와 시간으로 자동 갱신
 
-4. 상품 테이블 ( products )
+4. 상품 테이블 (products)
 ```sql
 CREATE TABLE products (
      product_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -55,7 +55,7 @@ CREATE TABLE products (
    - stock_quantity : 재고 수량으로, 필수 값이지만, 값을 넣지 않으면 기본적으로 0이 되도록 DEFAULT를 설정
    - description : 상품 설명은 길 수 있으므로 TEXT 타입을 사용, 필수는 아니므로 NOT NULL 제약 조건을 걸지 않음
 
-5. 주문 테이블 ( orders )
+5. 주문 테이블 (orders)
 ```sql
 CREATE TABLE orders (
      order_id INT AUTO_INCREMENT PRIMARY KEY,
