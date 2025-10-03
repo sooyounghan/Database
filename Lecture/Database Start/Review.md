@@ -28,7 +28,7 @@
    - 숫자 타입에는 정수를 저장하는 INT와 정확한 소수를 저장하는 DECIMAL 등이 있음
    - 문자열 타입에는 가변 길이 VARCHAR와 고정 길이 CHAR가 있으며 대부분 VARCHAR를 사용
    - 날짜와 시간 타입에는 DATE / DATETIME / TIMESTAMP가 있고 타임존 처리 여부와 저장 범위에 차이가 있음
-   - TIMESTAMP 보다는 DATETIME 을 권장
+   - TIMESTAMP 보다는 DATETIME을 권장
 
 5. 제약 조건
    - 제약 조건은 데이터의 무결성을 보장하기 위해 테이블에 특정 규칙을 강제하는 장치
@@ -37,4 +37,4 @@
    - PRIMARY KEY는 테이블의 각 행을 유일하게 식별하며 NOT NULL 과 UNIQUE 특징을 모두 가짐
    - FOREIGN KEY는 테이블 간의 관계를 설정하여 참조 무결성을 강제
    - DEFAULT는 값 미지정 시 기본값을 설정
-   - CHECK는 특정 조건을 만족하는 값만 입력 및 변경을 허용.
+   - CHECK는 특정 조건을 만족하는 값만 입력 및 변경을 허용
