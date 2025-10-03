@@ -51,7 +51,6 @@ SELECT * FROM customers;
    - 위 코드를 실행하면 customer_id 는 자동으로 다음 번호가 부여되고, join_date 는 DEFAULT 값인 현재 시각 (CURRENT_TIMESTAMP)이 자동으로 기록
    - products 테이블에 신상품을 등록하는 예시 : description (상품 설명) 열은 필수(NOT NULL)가 아니었음
 ```sql
-```sql
 INSERT INTO products (name, price, stock_quantity) VALUES ('베이직 반팔 티셔츠', 19900, 200);
 
 INSERT INTO products (name, price, stock_quantity) VALUES ('초록색 긴팔 티셔츠', 30000, 50);
