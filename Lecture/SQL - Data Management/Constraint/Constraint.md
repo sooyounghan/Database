@@ -15,27 +15,27 @@ SET FOREIGN_KEY_CHECKS = 1; -- 활성화
 ```
 
 4. NOT NULL 제약 조건 위반 : "필수 항목을 입력해주세요."
-  - 가장 기본적이고 단순한 제약 조건은 NOT NULL
-  - NULL 은 값이 없다는 뜻으로, NOT NULL은 'NULL 을 허용하지 않는다'는 뜻으로, 필수 입력 항목을 지정할 때 사용
-  - customers 테이블의 name 열은 NOT NULL로 설정되어 있으므로, 회원 가입 시 이름은 반드시 입력해야 함
-  - 만약 이름을 빼고 INSERT 시도 할 때?
+   - 가장 기본적이고 단순한 제약 조건은 NOT NULL
+   - NULL 은 값이 없다는 뜻으로, NOT NULL은 'NULL 을 허용하지 않는다'는 뜻으로, 필수 입력 항목을 지정할 때 사용
+   - customers 테이블의 name 열은 NOT NULL로 설정되어 있으므로, 회원 가입 시 이름은 반드시 입력해야 함
+   - 만약 이름을 빼고 INSERT 시도 할 때?
 ```sql
 -- `name` 열을 빼고 INSERT를 시도
 INSERT INTO customers (email, password, address)
 VALUES ('noname@example.com', 'password123', '서울시 마포구');
 ```
-  - 실행 결과
+   - 실행 결과
 ```
 Error Code: 1364. Field 'name' doesn't have a default value
 ```
-  - 데이터베이스는 "name 필드에 기본값이 없다"라는 오류를 반환하며 INSERT를 거부
-  - name열은 NOT NULL 인데 값을 주지 않았고, DEFAULT로 지정된 값도 없으므로 어떤 데이터를 넣어야 할지 알 수 없기 때문임
-  - 이처럼 NOT NULL 제약 조건은 데이터의 완전성을 보장하는 첫 번째 방어선
+   - 데이터베이스는 "name 필드에 기본값이 없다"라는 오류를 반환하며 INSERT를 거부
+   - name열은 NOT NULL 인데 값을 주지 않았고, DEFAULT로 지정된 값도 없으므로 어떤 데이터를 넣어야 할지 알 수 없기 때문임
+   - 이처럼 NOT NULL 제약 조건은 데이터의 완전성을 보장하는 첫 번째 방어선
 
 5. UNIQUE 제약 조건 위반 : "이미 사용 중인 이메일입니다."
-  - 가장 흔하게 마주치는 제약 조건 오류 중 하나는 UNIQUE 키 위반
-  - customers 테이블의 email 열에는 UNIQUE 제약 조건이 걸려 있으므로, 모든 고객은 서로 다른 이메일 주소를 가져야 함
-  - 만약 기존에 있는 이메일로 새로운 회원을 가입시키려고 하면 어떻게 될까?
+   - 가장 흔하게 마주치는 제약 조건 오류 중 하나는 UNIQUE 키 위반
+   - customers 테이블의 email 열에는 UNIQUE 제약 조건이 걸려 있으므로, 모든 고객은 서로 다른 이메일 주소를 가져야 함
+   - 만약 기존에 있는 이메일로 새로운 회원을 가입시키려고 하면 어떻게 될까?
 ```sql
 INSERT INTO customers (name, email, password, address)
 VALUES ('강감찬', 'kang@example.com', 'new_password_789', '서울시 강남구');
@@ -55,12 +55,12 @@ INSERT INTO customers (name, email, password, address)
 VALUES ('홍길동', 'kang@example.com', 'new_password_123', '서울시 송파구');
 ```
 
-   - 추가로 저장할 홍길동 회원의 이메일 kang@example.com은 이미 강감찬 고객이 사용 중인 이메일
+   - 추가로 저장할 홍길동 회원의 이메일 ```kang@example.com```은 이미 강감찬 고객이 사용 중인 이메일
    - 실행 결과
 ```
 Error Code: 1062. Duplicate entry 'kang@example.com' for key 'customers.email'
 ```
-   - 홍길동 회원을 저장할 때 데이터베이스는 "customers.email 키에 중복된 값 kang@example.com이 있습니다"라는 명확한 오류 메시지를 반환하며 INSERT 요청을 거부
+   - 홍길동 회원을 저장할 때 데이터베이스는 "customers.email 키에 중복된 값 ```kang@example.com```이 있습니다"라는 명확한 오류 메시지를 반환하며 INSERT 요청을 거부
    - 이처럼 UNIQUE 제약 조건은 데이터의 고유성을 보장하는 중요한 역할
 
 6. 외래 키(FK) 제약 조건 : 관계의 무결성 지키기
