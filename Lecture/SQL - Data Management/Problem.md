@@ -167,7 +167,7 @@ SELECT * FROM orders;
 INSERT INTO orders (customer_id) VALUES (999);
 
 -- 시도 2: 필수 항목(name) 누락
-INSERT INTO customers (customer_id) VALUES (2)
+INSERT INTO customers (customer_id) VALUES (2);
 ```
 
   - 실행 결과 : 시도 1 결과
