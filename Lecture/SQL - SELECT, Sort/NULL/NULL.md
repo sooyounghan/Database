@@ -52,7 +52,7 @@ SELECT * FROM products WHERE description IS NOT NULL;
    - NULL은 문자도, 숫자도 아닌데 도대체 어디에 위치해야 하는가?
    - ORDER BY 는 이 NULL 을 어떻게 처리하는가?
    - 💡 MySQL의 NULL 정렬 규칙 : 결론부터 말하자면, MySQL은 NULL을 가장 작은 값으로 취급
-      + ORDER BY column ASC (오름차순): NULL 값이 가장 먼저 나옴 (가장 작은 값으로 취급)
+      + ORDER BY column ASC (오름차순) : NULL 값이 가장 먼저 나옴 (가장 작은 값으로 취급)
       + ORDER BY column DESC (내림차순) : NULL 값이 가장 나중에 나옴 (가장 작은 값이라 맨 아래로 밀려남)
    - 이것은 데이터베이스 시스템마다 정책이 다를 수 있으므로(Oracle은 NULL을 가장 큰 값으로 취급), 사용하는 DB가 어떤 규칙을 따르는지 명확히 아는 것이 중요
    -  description 열을 오름차순으로 정렬하기
