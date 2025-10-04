@@ -99,7 +99,7 @@ FROM products
 ORDER BY price DESC;
 ```
 
-8. 문제 8 : 다중 기준으로 정렬하
+8. 문제 8 : 다중 기준으로 정렬하기
    - products 테이블의 상품 정보를 먼저 가격(price)의 오름차순으로 정렬하고, 만약 가격이 같다면 재고 수량(stock_quantity)이 많은 순(내림차순)으로 정렬하여 조회
    - 실행 결과
 <div align="center">
