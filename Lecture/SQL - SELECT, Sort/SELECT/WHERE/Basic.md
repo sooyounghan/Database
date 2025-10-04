@@ -3,21 +3,21 @@
 -----
 1. 전체 데이터가 아닌, 특정한 조건을 만족하는 데이터만 콕 집어서 보고 싶을 때가 훨씬 많은데, 이럴 때 사용하는 것이 바로 WHERE 절
 2. 조건문의 시작 : WHERE 절과 비교 연산자
-  - WHERE 절은 FROM 절 바로 뒤에 위치하며, 우리가 원하는 행(Row)만 걸러내는 필터 역할을 함
+   - WHERE 절은 FROM 절 바로 뒤에 위치하며, 우리가 원하는 행(Row)만 걸러내는 필터 역할을 함
 ```sql
 SELECT 열이름
 FROM 테이블이름
 WHERE 조건;
 ```
-  - WHERE 절에는 '조건문'이 들어가는데, 이 조건문은 보통 '비교 연산자'를 사용하여 만들어짐
-  - 가장 기본이 되는 비교 연산자
+   - WHERE 절에는 '조건문'이 들어가는데, 이 조건문은 보통 '비교 연산자'를 사용하여 만들어짐
+   - 가장 기본이 되는 비교 연산자
 <div align="center">
 <img src="https://github.com/user-attachments/assets/bcecc3a2-3714-44f9-95e8-6cff505a6da9">
 </div>
 
-  - SQL에서 문자열, 날짜 값은 작은따옴표(')로 감싸주며, 숫자는 그대로 사용
+   - SQL에서 문자열, 날짜 값은 작은따옴표(')로 감싸주며, 숫자는 그대로 사용
 
-  - customers 테이블에서 이메일이 yisunsin@example.com인 고객 조회하기
+   - customers 테이블에서 이메일이 ```yisunsin@example.com```인 고객 조회하기
 ```sql
 SELECT * FROM customers WHERE email = 'yisunsin@example.com';
 ```
