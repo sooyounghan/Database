@@ -163,10 +163,10 @@ SELECT * FROM orders;
    - customers 테이블에 존재하지 않는 customer_id(예) 999)를 사용하여 orders 테이블에 새로운 주문을 추가
    - customers 테이블에 고객을 추가할 때, 필수 항목인 name을 빼고 추가
 ```sql
--- 시도 1: 존재하지 않는 고객의 주문 추가
+-- 시도 1 : 존재하지 않는 고객의 주문 추가
 INSERT INTO orders (customer_id) VALUES (999);
 
--- 시도 2: 필수 항목(name) 누락
+-- 시도 2 : 필수 항목(name) 누락
 INSERT INTO customers (customer_id) VALUES (2);
 ```
 
