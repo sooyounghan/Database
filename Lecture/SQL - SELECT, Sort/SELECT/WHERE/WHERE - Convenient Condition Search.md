@@ -16,7 +16,8 @@ SELECT * FROM products WHERE price BETWEEN 5000 AND 15000;
 <div align="center">
 <img src="https://github.com/user-attachments/assets/5fe86122-a989-4a76-8abb-842531b40bf1">
 </div>
-   - >= ... AND <= ... 보다 더 직관적이고 SQL이 이해하기 쉬워짐
+
+   - ```>= ... AND <= ...``` 보다 더 직관적이고 SQL이 이해하기 쉬워짐
    - 💡 BETWEEN은 양 끝값을 포함
    - BETWEEN을 사용하면 같은 문제를 더 간결하게 표현할 수 있음
    - BETWEEN a AND b 구문은 'a와 b 사이의 값(a, b 포함)'을 찾아줌 : a에는 최솟값, b에는 최댓값
