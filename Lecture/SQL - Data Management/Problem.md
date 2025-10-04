@@ -114,7 +114,7 @@ DESC products;
      + customer_id : 정수, 필수
      + order_date : 날짜와 시간(DATETIME), 기본값은 현재 시각
 
-   - FOREIGN KEY 설정 : orders.customer_id가 customers.customer_id를 참조하
+   - FOREIGN KEY 설정 : orders.customer_id가 customers.customer_id를 참조
    - 두 테이블을 생성한 후, '홍길동' 고객과 그 고객이 주문한 데이터를 각각 1개씩 추가하고, 두 테이블의 전체 내용을 조회
 ```sql
 SELECT * FROM customers;
