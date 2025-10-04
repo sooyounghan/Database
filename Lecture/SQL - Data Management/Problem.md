@@ -2,12 +2,12 @@
 ### 문제와 풀이
 -----
 1. 문제 1 : 데이터베이스와 테이블 생성하기
-  - 쇼핑몰 프로젝트를 위해 my_test 데이터베이스를 생성하고, 해당 데이터베이스를 사용하도록 선택
-  - 그 후, 고객 정보를 저장할 members 테이블을 생성해라. members 테이블은 다음과 같은 열(column)을 가짐
-    + id : 정수(INT), 기본키 설정
-    + name : 최대 50글자의 문자열(VARCHAR), NOT NULL 제약 조건
-    + join_date : 날짜(DATE)
-  - DESC members; 실행 시 다음과 같은 결과가 출력
+   - 쇼핑몰 프로젝트를 위해 my_test 데이터베이스를 생성하고, 해당 데이터베이스를 사용하도록 선택
+   - 그 후, 고객 정보를 저장할 members 테이블을 생성하며, members 테이블은 다음과 같은 열(column)을 가짐
+     + id : 정수(INT), 기본키 설정
+     + name : 최대 50글자의 문자열(VARCHAR), NOT NULL 제약 조건
+     + join_date : 날짜(DATE)
+   - DESC members; 실행 시 다음과 같은 결과가 출력
 <div align="center">
 <img src="https://github.com/user-attachments/assets/058c2964-7fb9-4120-abc7-5ac4df0ec619">
 </div>
