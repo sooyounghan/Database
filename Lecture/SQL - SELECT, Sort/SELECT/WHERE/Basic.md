@@ -19,7 +19,9 @@ WHERE 조건;
 
    - customers 테이블에서 이메일이 ```yisunsin@example.com```인 고객 조회하기
 ```sql
-SELECT * FROM customers WHERE email = 'yisunsin@example.com';
+SELECT *
+FROM customers
+WHERE email = 'yisunsin@example.com';
 ```
    - 실행 결과
 <div align="center">
@@ -30,7 +32,9 @@ SELECT * FROM customers WHERE email = 'yisunsin@example.com';
   
    - products 테이블에서 가격(price)이 10000원 이상인 상품만 조회
 ```sql
-SELECT * FROM products WHERE price >= 10000;
+SELECT *
+FROM products
+WHERE price >= 10000;
 ```
    - 실행 결과
 <div align="center">
@@ -48,7 +52,9 @@ SELECT * FROM products WHERE price >= 10000;
 
     - 가격이 5000원 이상이면서, 재고가 50개 이상인 상품 조회하기 (AND)
 ```sql
-SELECT * FROM products WHERE price >= 5000 AND stock_quantity >= 50;
+SELECT *
+FROM products
+WHERE price >= 5000 AND stock_quantity >= 50;
 ```
 <div align="center">
 <img src="https://github.com/user-attachments/assets/33573c4e-dba1-4b43-bf44-c33f27d6d2cd">
@@ -59,7 +65,9 @@ SELECT * FROM products WHERE price >= 5000 AND stock_quantity >= 50;
   - 이번에는 OR를 사용 : 가격이 20000원 이거나, 재고가 100개 이상인 상품을 찾기이므로, 둘 중 하나의 조건만 만족해도 됨
   - 가격이 20000원이거나, 재고가 100개 이상인 상품 조회하기 (OR)
 ```sql
-SELECT * FROM products WHERE price = 20000 OR stock_quantity >= 100;
+SELECT *
+FROM products
+WHERE price = 20000 OR stock_quantity >= 100;
 ```
 <div align="center">
 <img src="https://github.com/user-attachments/assets/319b39ab-821a-4e20-a354-292ef9c9d10f">
@@ -71,7 +79,9 @@ SELECT * FROM products WHERE price = 20000 OR stock_quantity >= 100;
   - 마지막으로 같지 않다는 의미인 !=를 사용 : 가격이 20000원이 아닌 제품을 찾기
   - 가격이 20000원이 아닌 상품 조회하기 (!=)
 ```sql
-SELECT * FROM products WHERE price != 20000;
+SELECT *
+FROM products
+WHERE price != 20000;
 ```
 
   - 실행 결과
