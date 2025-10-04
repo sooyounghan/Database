@@ -5,7 +5,7 @@
    - 현재 보급형 스마트폰의 description 값이 NULL
    - description 이 NULL 인 상품을 = 비교를 통해 조회
 ```sql
-SELECT * FROM products WHERE description = NULL
+SELECT * FROM products WHERE description = NULL;
 ```
   - 실행 결과 : 없음
   - 분명 보급형 스마트폰 의 description 값은 NULL 이기 때문에 조회가 될 것으로 기대했는데, 기대와는 다르게 아무 상품도 조회되지 않음
