@@ -45,4 +45,4 @@ FROM order_stat;
 <img src="https://github.com/user-attachments/assets/b482cba8-1211-47a1-8ece-43e59ee7c689">
 </div>
 
-7. JOIN : 주문 통계(order_stat) 테이블은 앞서 설계한 customers, orders, products 테이블을 모두 합쳐(JOIN)놓은 것 같아 보ㅇㅁ
+7. JOIN : 주문 통계(order_stat) 테이블은 앞서 설계한 customers, orders, products 테이블을 모두 합쳐(JOIN)놓은 것 같아 보임
