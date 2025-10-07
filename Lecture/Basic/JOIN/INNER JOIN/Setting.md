@@ -129,7 +129,7 @@ CREATE TABLE colors (
 ```
    - CREATE DATABASE IF NOT EXISTS my_shop2 : my_shop2 데이터베이스가 존재하지 않으면 생성
    - DROP TABLE IF EXISTS orders : 주문 테이블이 만약에 존재하면 DROP
-   - 이렇게 IF EXISTS 구문을 활용하면 기존에 테이블이 있는 경우에만 깔끔하게 제거할 수 있dma
+   - 이렇게 IF EXISTS 구문을 활용하면 기존에 테이블이 있는 경우에만 깔끔하게 제거할 수 있음
      + 덕분에 같은 구문을 여러 번 실행해도 오류가 발생하지 않음
      + 만약 테이블이 없다면 DROP을 할 수 없기 때문에 DROP TABLE에서 오류가 발생
      + IF EXISTS 구문은 이런 번거로움을 해결
