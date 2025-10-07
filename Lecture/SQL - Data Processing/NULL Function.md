@@ -50,7 +50,7 @@ SELECT
 FROM
      products;
 ```
-   - 위 쿼리의 실행 결과는 IFNULL() 을 사용했을 때와 완전히 같다.
+   - 위 쿼리의 실행 결과는 IFNULL() 을 사용했을 때와 완전히 같음
    - COALESCE()는 예를 들어, 상품에 short_description(짧은 설명) 컬럼과 long_description(긴 설명) 컬럼이 둘 다 있다고 가정
      + 우리는 짧은 설명이 있으면 그것을 쓰고, 없으면 긴 설명을 쓰고, 둘 다 없으면 '설명 없음'을 표시하고 싶을 수 있는데, 이럴 때 COALESCE()가 아주 유용
      + COALESCE(short_description, long_description, '설명 없음') : 이런 식으로 여러 대안을 순서대로 제시할 수 있다는 점에서 COALESCE()가 IFNULL() 보다 더 확장성이 좋음
