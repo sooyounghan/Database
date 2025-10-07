@@ -125,7 +125,7 @@ SELECT
 FROM
      order_stat
 WHERE
-     category != '도서' OR category IS NULL -- 💡 '도서' 카테고리가 아닌 주문, NULL도 포함
+     category != '도서' OR category IS NULL -- 💡 '도서' 카테고리가 아닌 주문, NULL도 포함 (NOT IN ('도서') X)
 GROUP BY
      customer_name
 HAVING
