@@ -9,13 +9,13 @@ SELECT
 FROM
      order_stat
 WHERE
-     total_purchase >= 400000 -- 여기! SELECT에서 만든 별칭을 사용
+     total_purchase >= 400000 -- SELECT에서 만든 별칭을 사용
 GROUP BY
      customer_name;
 ```
    - 실행 결과
 ```
-    Error Code: 1054. Unknown column 'total_purchase' in 'where clause'
+Error Code: 1054. Unknown column 'total_purchase' in 'where clause'
 ```
    - 이 쿼리는 실행하면 오류가 발생 : WHERE 절에서 total_purchase라는 컬럼을 찾을 수 없다는 내용의 오류
       + 코드를 작성하는 순서와 SQL이 실제로 쿼리를 처리하는 순서(논리적 실행 순서)가 다르기 때문에 발생
