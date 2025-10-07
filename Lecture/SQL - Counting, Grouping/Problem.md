@@ -41,7 +41,7 @@ FROM
 ```
 
 3. 문제 3 : 카테고리별 실적 분석하기
-   - order_stat 테이블을 category별로 그룹화하여, 각 카테고리별로 총 판매된 상품 수량(quantity 의 합계)과 총 매출액(price * quantity 의 합계)을 계산
+   - order_stat 테이블을 category별로 그룹화하여, 각 카테고리별로 총 판매된 상품 수량(quantity의 합계)과 총 매출액(price * quantity 의 합계)을 계산
    - 결과는 총 매출액이 높은 순서대로 정렬
    - 실행 결과
 <div align="center">
