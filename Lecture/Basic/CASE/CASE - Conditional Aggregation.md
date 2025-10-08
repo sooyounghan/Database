@@ -119,7 +119,7 @@ FROM
 <img src="https://github.com/user-attachments/assets/e3eee023-ded2-45d1-b707-7cb7c58824af">
 </div>
 
-   - 하나의 쿼리로 행으로 흩어져 있던 status정보를 열로 변환하여, 한눈에 파악하기 쉬운 피벗(Pivot) 보고서 생성
+   - 하나의 쿼리로 행으로 흩어져 있던 status 정보를 열로 변환하여, 한눈에 파악하기 쉬운 피벗(Pivot) 보고서 생성
 
 5. 실습 2 : GROUP BY 와 함께 사용하기 (피벗 테이블)
    - 상품 카테고리별로, 상태별 주문 건수를 집계하는 경우
