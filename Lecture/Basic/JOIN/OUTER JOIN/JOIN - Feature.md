@@ -59,7 +59,7 @@ WHERE user_id = 1;
 <img src="https://github.com/user-attachments/assets/7a7ef1ae-4fb8-4454-8930-d3f868a9b9ec">
 </div>
 
-   - 경우 1 : 자식 부모 조인 (orders → users, 행 개수 유지)
+   - 경우 1 : 자식-부모 조인 (orders → users, 행 개수 유지)
       + 먼저 orders 테이블을 기준으로 '션'의 주문 내역에 고객 이름을 붙여보기
       + 이것이 바로 자식 테이블(orders)에서 부모 테이블(users)로, 즉 FK → PK로 조인하는 경우
 ```sql
@@ -90,9 +90,9 @@ WHERE
 </div>
 
    - orders 테이블은 조인 전에도 2행이었고, 조인 이후에도 2행이 그대로 유지
-   - 이것이 자식 부모 조인의 특징
+   - 이것이 자식-부모 조인의 특징
      
-   - 경우 2 : 부모 자식 조인 (users orders, 행 개수 증가)
+   - 경우 2 : 부모-자식 조인 (users orders, 행 개수 증가)
      + 이번에는 반대로 users 테이블을 기준으로 '션' 고객의 주문 내역을 붙여보기
      + 이것이 바로 부모 테이블(users)에서 자식 테이블(orders)로, 즉 PK → FK로 조인하는 경우
 ```sql
