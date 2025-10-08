@@ -51,7 +51,9 @@ FROM retired_users;
    - 두 SELECT 문 사이에 UNION 키워드를 넣어주기만 하면 됨
 ```sql
 SELECT name, email FROM users
+
 UNION
+
 SELECT name, email FROM retired_users;
 ```
 
