@@ -16,7 +16,7 @@ GROUP BY category;
 <img src="https://github.com/user-attachments/assets/e9e71a2b-4caf-4589-80f5-cef5855f3ff0">
 </div>
 
-   - 여기에 이름( name )을 추가해보자.
+   - 이름(name)을 추가
 ```sql
 -- 잘못된 쿼리의 예
 SELECT category, name, MAX(price)
