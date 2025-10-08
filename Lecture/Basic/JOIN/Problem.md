@@ -33,7 +33,6 @@ WHERE
    - 힌트 : 주문이 없는 고객의 경우 o.order_id 가 NULL 이므로 COUNT 결과가 0이 되어야 함
 
 ```sql
-```sql
 SELECT
    u.name,
    COUNT(o.order_id) AS order_count
@@ -109,7 +108,7 @@ ORDER BY
 
 ```sql
 SELECT
-	  m.employee_id,
+	m.employee_id,
     m.name,
     m.manager_id,
     e.name AS manager_name
@@ -150,8 +149,7 @@ INSERT INTO materials(material) VALUES ('Cotton'), ('Silk');
 ```sql
 -- 세 테이블을 CROSS JOIN하여 모든 조합 조회
 SELECT
-   CONCAT('기본티셔츠-', c.color, '-', s.size, '-', m.material) AS
-product_full_name,
+   CONCAT('기본티셔츠-', c.color, '-', s.size, '-', m.material) AS product_full_name,
    s.size,
    c.color,
    m.material
@@ -198,7 +196,6 @@ ORDER BY
 <img src="https://github.com/user-attachments/assets/43ccf88d-04ca-4209-ae07-09cb1d25a986">
 </div>
 
-```sql
 ```sql
 SELECT
     u.name AS customer_name,
