@@ -98,4 +98,28 @@ ORDER BY orders.order_id;
 
    - 데이터베이스는 users 테이블과 orders 테이블을 조회 (그림에서 화살표의 방향이 반대인 것을 확인)
    - users → orders 조인: users 테이블을 한 줄씩 읽으며, 각 사용자의 user_i 와 일치하는 모든 orders 정보를 찾아 옆에 붙임
-      + 예를 들어 users의 user음
+      + 예를 들어 users의 user_id:1은 orders의 user_id:1인 order_id:1, order_id:2와 연결
+   - 두 방식 모두 ON 조건을 만족하는 모든 조합을 찾아내므로, 논리적으로 완전히 동일한 결과를 생성
+   - 주문이 없는 '레오나르도 다빈치'나, 주문은 있지만 존재하지 않는 회원(만약 그런 데이터가 있다면)은 어느 방향으로 조인해도 결과에 포함되지 않음
+
+9. 쿼리로 확인하기
+   - 앞서 orders 의 user_id를 사용해서 users에 있는 user_id로 조인 : 쉽게 이야기해서 orders → users 방향으로 조인
+   - 그럼 반대로 users의 user_id를 사용해서 orders에 있는 user_id로 조인하면 어떻게 될까? (쉽게 이야기해서 반대 방향인 users orders 방향으로 조인하면 어떻게 될까?)
+```sql
+SELECT
+    orders.order_id,
+    orders.order_date,
+    orders.user_id AS orders_user_id,
+    users.user_id AS users_user_id,
+    users.name
+FROM users
+INNER JOIN orders ON orders.user_id = users.user_id
+ORDER BY order_id;
+```
+   - 이번에는 조인의 위치를 변경해서 FROM에 users를 JOIN에 orders를 사용
+<div align="center">
+<img src="https://github.com/user-attachments/assets/6204289e-88c8-4add-b028-82e84492802b">
+</div>
+
+   - 결과는 위치를 변경하기 전의 쿼리와 완전히 동일
+   - 내부 조인에서 데이터베이스는 ON 절의 users.user_id = orders.user_id 조건을 만족하는 짝을 찾을 뿐, 어느 테이블을 먼저 읽었는지는 최종 결과에 영향을 주지 않음
