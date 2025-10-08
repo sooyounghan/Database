@@ -43,6 +43,7 @@ SELECT name, email, retired_date FROM retired_users -- retired_date
 SELECT name, email, created_at FROM users
 
 UNION ALL
+
 SELECT name, email, retired_date FROM retired_users
 
 ORDER BY retired_date; -- 첫 번째 SELECT 문에 없는 컬럼
