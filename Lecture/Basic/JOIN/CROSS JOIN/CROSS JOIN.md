@@ -78,7 +78,7 @@ CROSS JOIN
    - 이제 CROSS JOIN 으로 만든 상품 옵션 조합을 새로운 테이블에 저장해 보기
    - 이렇게 데이터를 한 번에 대량으로 삽입 할 때 INSERT INTO ... SELECT 구문을 사용
       + 티셔츠 상품에 대한 모든 사이즈와 색상 조합을 저장할 product_options 테이블을 만들 것
-      + 이 테이블은 option_id, product_name, size, color 필드를 가진다.
+      + 이 테이블은 option_id, product_name, size, color 필드를 가짐
 ```sql
 CREATE TABLE product_options (
    option_id BIGINT AUTO_INCREMENT,
