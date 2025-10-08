@@ -14,10 +14,10 @@ SELECT
    name,
    category,
    CASE category
-   WHEN '전자기기' THEN 'Electronics'
-   WHEN '도서' THEN 'Books'
-   WHEN '패션' THEN 'Fashion'
-   ELSE 'Etc'
+         WHEN '전자기기' THEN 'Electronics'
+         WHEN '도서' THEN 'Books'
+         WHEN '패션' THEN 'Fashion'
+         ELSE 'Etc'
    END AS category_english
 FROM
    products;
