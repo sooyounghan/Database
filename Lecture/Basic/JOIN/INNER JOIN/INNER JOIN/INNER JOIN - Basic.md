@@ -74,7 +74,9 @@ WHERE orders.status = 'COMPLETED';
 ```
    - 여기서 users.user_id는 테이블명.컬럼명 형식으로 작성한 것을 볼 수 있음
    - user_id 처럼 orders, users 두 테이블에 이름이 같은 컬럼이 있을 경우, 어떤 테이블의 user_id를 말하는지 명확히 지정해주어야 함 : 그렇지 않으면 오류가 발생
-     + 오류 메시지 : Column 'user_id' in field list is ambiguous (user_id 필드가 모호하다는 오류 메시지)
+```
+오류 메시지 : Column 'user_id' in field list is ambiguous (user_id 필드가 모호하다는 오류 메시지)
+```
    - name, order_date의 경우 한 테이블에만 존재하기 때문에 모호함이 발생하지는 않음 : 이 경우 앞의 테이블명을 생략할 수 있음
    - 실무에서는 어떤 테이블의 필드인지 명시하는 것이 가독성을 높이고, 컬럼의 소속을 쉽게 인지할 수 있기 때문에 사용하는 것을 권장
    - 실행 결과
