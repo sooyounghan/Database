@@ -51,7 +51,7 @@ AND order_id != 1;
 
 ```sql
 SELECT
-   name AS 고객명,
+   u.name AS 고객명,
    (SELECT COUNT(*) FROM orders WHERE o.user_id = u.user_id) AS 총주문횟수
 FROM
     users u
