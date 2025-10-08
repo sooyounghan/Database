@@ -59,7 +59,7 @@ WHERE
      + 데이터베이스는 먼저 서브쿼리인 SELECT DISTINCT product_id FROM orders를 실행
      + orders 테이블에 기록된 모든 주문을 확인하여, 주문된 상품들의 고유한 ID 목록을 만듬
        * orders 테이블에는 product_id가 1, 4, 2, 4, 3, 1, 1인 주문들이 존재
-       * DISTINCT 를 통해 중복이 제거된 최종 목록은 (1, 2, 3, 4) 가 된다.
+       * DISTINCT 를 통해 중복이 제거된 최종 목록은 (1, 2, 3, 4)
      + 이제 메인쿼리가 실행
        * SELECT product_id, name, price FROM products WHERE product_id IN (1, 2, 3, 4);
      + products 테이블의 모든 상품을 하나씩 확인하며 product_id가 (1, 2, 3, 4) 목록에 포함되는지 검사
