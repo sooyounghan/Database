@@ -4,7 +4,8 @@
 1. 우리 쇼핑몰에서 판매하는 상품들의 평균 가격보다 비싼 상품은 무엇이 있을까?
    - 1단계 : 먼저, 전체 상품의 평균 가격을 구함 (AVG() 집계 함수를 사용하면 간단히 구할 수 있음)
 ```sql
-SELECT AVG(price) FROM products;
+SELECT AVG(price)
+FROM products;
 ```
 <div align="center">
 <img src="https://github.com/user-attachments/assets/3c40b641-2c0f-42b3-bad7-9bedcf07f9ff">
