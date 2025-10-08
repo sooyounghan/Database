@@ -31,7 +31,7 @@ WHERE o.status = 'COMPLETED';
 
 3. 실무에서는 AS 생략
    - 실무에서는 테이블 별칭을 붙일 때 AS 키워드를 생략하는 경우가 더 많음
-   - 테이블 별칭의 AS 를 생략하고, 추가로 INNER JOIN 의 INNER 도 생략했다.
+   - 테이블 별칭의 AS 를 생략하고, 추가로 INNER JOIN 의 INNER도 생략
 ```sql
 SELECT
      u.user_id,
