@@ -72,7 +72,7 @@ WHERE
       + p2는 서브쿼리의 products 테이블을 가리키는 별칭
       + 이 조건문은 "서브쿼리에서 평균을 계산할 때, 메인쿼리가 현재 보고 있는 상품(p1)과 동일한 카테고리를 가진 상품들(p2)만을 대상으로 하라"는 의미 (이것이 바로 '연관'의 핵심)
 
-   - 쿼리 실해 흐름
+   - 쿼리 실행 흐름
 <div align="center">
 <img src="https://github.com/user-attachments/assets/1adf323a-be35-448f-a9a4-fc8879195600">
 </div>
