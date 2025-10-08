@@ -47,7 +47,7 @@ GROUP BY
      END;
 ```
 <div align="center">
-<img src=""https://github.com/user-attachments/assets/eb2c618b-d74c-4ff7-be0e-3d41d7d2b8c4">
+<img src="https://github.com/user-attachments/assets/eb2c618b-d74c-4ff7-be0e-3d41d7d2b8c4">
 </div>
 
    - SQL 표준의 논리적 실행 순서에 따르면 GROUP BY 절이 SELECT 절보다 먼저 처리
