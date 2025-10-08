@@ -9,7 +9,8 @@
       + 먼저 users 테이블과 orders 테이블을 각각 조회해서 어떤 고객이 있고, 어떤 주문이 있는지 직접 확인
 ```sql
 -- users 테이블 조회 (최소한의 필드만)
-SELECT user_id, name, email FROM users;
+SELECT user_id, name, email
+FROM users;
 ```
 <div align="center">
 <img src="https://github.com/user-attachments/assets/53c96f96-5425-4f15-a56f-7eff1f23b383">
@@ -17,7 +18,8 @@ SELECT user_id, name, email FROM users;
 
 ```sql
 -- orders 테이블 조회 (최소한의 필드만)
-SELECT user_id, order_id FROM orders
+SELECT user_id, order_id
+FROM orders
 order by user_id;
 ```
 <div align="center">
