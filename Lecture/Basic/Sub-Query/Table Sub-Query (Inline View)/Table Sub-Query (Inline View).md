@@ -47,11 +47,11 @@ WHERE category = '전자기기';
 4. 인라인 뷰를 이용한 2단계 접근법
    - 1단계 (인라인 뷰) : 카테고리별 최고가격을 미리 구함
      + 먼저, 카테고리별로 가장 높은 가격이 얼마인지 알아내는 쿼리를 작성
-     + 이 쿼리가 바로 인라인 뷰, 즉 가상 테이블이 될 것이다.
+     + 이 쿼리가 바로 인라인 뷰, 즉 가상 테이블이 될 것
 ```sql
 SELECT category, MAX(price) AS max_price
 FROM products
-GROUP BY category
+GROUP BY category;
 ```
 <div align="center">
 <img src="https://github.com/user-attachments/assets/6479fb5c-5968-4634-b2ee-a258189a556c">
