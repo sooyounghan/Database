@@ -45,7 +45,7 @@
    - 결론적으로, INNER JOIN은 어느 한쪽에만 데이터가 존재하는 경우는 결과에 포함시키지 않고, 양쪽 모두에 명확하게 연결고리가 있는 데이터만을 짝지어 보여줌
 
 6. 쿼리로 확인하기
-   - 내부 조인을 사용했을 때 교집합에 존재하는 user_id : {1, 2, 3, 4, 5} 만 선택되었는지 쿼리로 확인해보자.
+   - 내부 조인을 사용했을 때 교집합에 존재하는 user_id : {1, 2, 3, 4, 5} 만 선택되었는지 쿼리로 확인
 ```sql
 SELECT
     orders.order_id,
@@ -91,13 +91,13 @@ ORDER BY orders.order_id;
 </div>
 
    - 데이터베이스는 orders 테이블과 users 테이블을 조회
-   - orders → users 조인: orders 테이블을 한 줄씩 읽으며, 각 주문의 user_id에 해당하는 users 정보를 찾아 옆에 붙임
+   - orders → users 조인 : orders 테이블을 한 줄씩 읽으며, 각 주문의 user_id에 해당하는 users 정보를 찾아 옆에 붙임
 <div align="center">
 <img src="https://github.com/user-attachments/assets/b1d7d340-cde9-430e-b083-a1c322483e73">
 </div>
 
    - 데이터베이스는 users 테이블과 orders 테이블을 조회 (그림에서 화살표의 방향이 반대인 것을 확인)
-   - users → orders 조인: users 테이블을 한 줄씩 읽으며, 각 사용자의 user_i 와 일치하는 모든 orders 정보를 찾아 옆에 붙임
+   - users → orders 조인 : users 테이블을 한 줄씩 읽으며, 각 사용자의 user_id와 일치하는 모든 orders 정보를 찾아 옆에 붙임
       + 예를 들어 users의 user_id:1은 orders의 user_id:1인 order_id:1, order_id:2와 연결
    - 두 방식 모두 ON 조건을 만족하는 모든 조합을 찾아내므로, 논리적으로 완전히 동일한 결과를 생성
    - 주문이 없는 '레오나르도 다빈치'나, 주문은 있지만 존재하지 않는 회원(만약 그런 데이터가 있다면)은 어느 방향으로 조인해도 결과에 포함되지 않음
