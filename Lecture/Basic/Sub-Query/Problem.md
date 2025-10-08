@@ -2,7 +2,7 @@
 ### 문제와 풀이
 -----
 1. 문제 1 : 가장 비싼 상품 조회하기
-   - products 테이블에서 가격이 가장 비싼 상품의 product_id, name, price 를 조회
+   - products 테이블에서 가격이 가장 비싼 상품의 product_id, name, price를 조회
    - WHERE 절에 스칼라 서브쿼리를 사용하여 문제를 해결
 <div align="center">
 <img src="https://github.com/user-attachments/assets/737bdf2b-4389-41a1-9a74-02d86ad78990">
@@ -28,15 +28,15 @@ WHERE
 
 ```sql
 SELECT
-   order_id AS 주문ID,
-   user_id AS 고객ID,
-   order_date AS 주문일시
+    order_id AS 주문ID,
+    user_id AS 고객ID,
+    order_date AS 주문일시
 FROM
-   orders
+    orders
 WHERE
- product_id = (SELECT product_id
-               FROM orders
-               WHERE order_id = 1)
+    product_id = (SELECT product_id
+                  FROM orders
+                  WHERE order_id = 1)
 AND order_id != 1;
 ```
 
@@ -51,8 +51,8 @@ AND order_id != 1;
 
 ```sql
 SELECT
-   u.name AS 고객명,
-   (SELECT COUNT(*) FROM orders WHERE o.user_id = u.user_id) AS 총주문횟수
+    u.name AS 고객명,
+    (SELECT COUNT(*) FROM orders WHERE o.user_id = u.user_id) AS 총주문횟수
 FROM
     users u
 ORDER BY
