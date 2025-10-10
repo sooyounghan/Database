@@ -46,7 +46,7 @@ WHERE item_name LIKE '게이밍%';
 </div>
 
    - (type : range) : item_name 이 '게이밍'으로 시작하는 특정 범위를 인덱스에서 스캔했음을 의미
-     + 이는 풀 테이블 스캔(ALL)보다 훨씬 효율적이다.
+     + 이는 풀 테이블 스캔(ALL)보다 훨씬 효율적
    - (key : idx_items_item_name) : 생성한 idx_items_item_name 인덱스가 올바르게 사용
    - (rows : 2) : 옵티마이저는 약 2개의 행만 스캔하면 결과를 찾을 수 있을 것으로 예측
 
