@@ -59,8 +59,7 @@ WHERE item_name = '게이밍 노트북';
    - 예를 들어, 2페이지 정도의 작은 책이라면 색인을 찾기 보다 그냥 책을 바로 보는게 원하는 결과를 더 빨리 얻을 수도 있기 때문임
    - 이럴 때 인덱스를 강제로 적용하려면 다음과 같이 FORCE INDEX를 사용하면 됨 : 그러면 인덱스를 사용한 실행 계획을 확인할 수 있음
 ```sql
-EXPLAIN
-SELECT *
+EXPLAIN SELECT *
 FROM items
 FORCE INDEX (idx_items_item_name)
 WHERE item_name = '게이밍 노트북';
