@@ -24,7 +24,7 @@ WHERE item_name = '게이밍 노트북';
 <img src="https://github.com/user-attachments/assets/c7f2d6c9-5f60-457e-b204-beb86c6d3848">
 </div>
 
-  - idx_items_item_name 인덱스가 사용되 : 그림에서는 줄여서 item_name 인덱스라고 표현
+  - idx_items_item_name 인덱스가 사용 : 그림에서는 줄여서 item_name 인덱스라고 표현
 <div align="center">
 <img src="https://github.com/user-attachments/assets/0e8386c3-578d-43bc-bb3e-c2b1ff9c2ad4">
 </div>
