@@ -108,18 +108,18 @@ FROM v_electronics_sales_status;
 ALTER VIEW v_electronics_sales_status
 AS
 SELECT
-   p.category,
-   COUNT(o.order_id) AS total_orders,
-   SUM(p.price * o.quantity) AS total_sales,
-   AVG(p.price * o.quantity) AS average_order_value
+      p.category,
+      COUNT(o.order_id) AS total_orders,
+      SUM(p.price * o.quantity) AS total_sales,
+      AVG(p.price * o.quantity) AS average_order_value
 FROM
-   orders o
+      orders o
 JOIN
-   products p ON o.product_id = p.product_id
+      products p ON o.product_id = p.product_id
 WHERE
-   p.category = '전자기기'
+      p.category = '전자기기'
 GROUP BY
-   p.category;
+      p.category;
 
 -- 수정된 뷰 조회
 SELECT *
