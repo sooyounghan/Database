@@ -118,8 +118,8 @@ ORDER BY price DESC;
    - 가장 주목할 점은 Extra 컬럼에서 Backward index scan이 사라지고 Using index condition만 남았다는 것
    - 이는 옵티마이저가 더 이상 인덱스를 '거꾸로' 읽는 수고를 할 필요가 없어졌음을 의미
      + 쿼리가 요구하는 정렬 순서(DESC)와 인덱스의 정렬 순서(DESC)가 완벽하게 일치하므로, 인덱스를 자연스러운 순서(정방향)로 스캔하기만 하면 됨
-     + 이것이 ORDER BY 절을 최적화하는 가장 이상적인 방법이다.
-   - 인덱스를 원래대로 다시 만들어두자.
+     + 이것이 ORDER BY 절을 최적화하는 가장 이상적인 방법
+   - 인덱스를 원래대로 다시 변경
 ```sql
 -- 내림차순 인덱스 삭제
 DROP INDEX idx_items_price_desc ON items;
