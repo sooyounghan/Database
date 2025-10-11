@@ -9,8 +9,8 @@
 2. 인덱스는 순서대로 사용하라!
    - '인덱스 왼쪽 접두어 규칙'을 의미
    - 복합 인덱스는 (A, B, C) 순서로 생성되었을 때, WHERE 절에서 A 조건 없이는 B나 C를 사용할 수 없음
-     + 가능 (O): WHERE A, WHERE A AND B, WHERE A AND B AND C
-     + 불가능 (X): WHERE B, WHERE C, WHERE B AND C
+     + 가능 (O) : WHERE A, WHERE A AND B, WHERE A AND B AND C
+     + 불가능 (X) : WHERE B, WHERE C, WHERE B AND C
      + 복합 인덱스의 가장 기본적이고 절대적인 규칙
 
 3. 등호(=) 조건은 앞으로, 범위 조건(<, >)은 뒤로 설정
@@ -28,7 +28,7 @@
 
 5. 정렬(ORDER BY)도 인덱스 순서를 따를 것
    - 복합 인덱스의 가장 강력한 기능 중 하나는 불필요한 정렬 작업을 생략하게 해주는 것
-   - ORDER BY 절이 인덱스 컬럼 순서와 일치하면, 데이터베이스는 이미 정렬된 인덱스를 순서대로 읽기만 하면 되므로 매우 빠름 : 이 경우 실행 계획에서 Using filesort 가 사라지는 것을 볼 수 있음
+   - ORDER BY 절이 인덱스 컬럼 순서와 일치하면, 데이터베이스는 이미 정렬된 인덱스를 순서대로 읽기만 하면 되므로 매우 빠름 : 이 경우 실행 계획에서 Using filesort가 사라지는 것을 볼 수 있음
      + 인덱스 : (category, price)
      + 빠른 쿼리 : WHERE category = '전자기기' ORDER BY price ('전자기기' 섹션은 이미 price 순으로 정렬되어 있으므로 추가 정렬이 필요 없음)
      + 느린 쿼리 (filesort 발생) : WHERE category = '전자기기' ORDER BY stock_quantity (인덱스는 stock_quantity 순서와는 무관하므로, 결과를 가져온 뒤 별도로 정렬해야 함)
