@@ -21,7 +21,7 @@ CREATE TABLE accounts (
      id INT PRIMARY KEY,
      owner_name VARCHAR(255) NOT NULL,
      balance INT NOT NULL
-    );
+);
 ```
 ```sql
 -- 초기 데이터 입력
