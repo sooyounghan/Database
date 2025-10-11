@@ -1,5 +1,5 @@
 -----
-### 범위 검색은 마지막에 한 번만 사용
+### 💡 범위 검색은 마지막에 한 번만 사용
 -----
 1. 등호(=) 조건을 사용하는 컬럼을 앞에, 범위 조건을 사용하는 컬럼을 뒤에 설정
 ```sql
@@ -106,6 +106,7 @@ FROM items
 WHERE category = '패션' AND price = 20000;
 
 UNION ALL
+
 SELECT *
 FROM items
 WHERE category = '헬스/뷰티' AND price = 20000;
