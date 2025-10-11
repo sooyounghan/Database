@@ -47,7 +47,7 @@ WHERE category = '전자기기' AND price >= 100000
 <img src="https://github.com/user-attachments/assets/05d7941e-1e12-4c46-8800-6d583048abc4">
 </div>
 
-4. 이처럼 복합 인덱스는 첫 번째 컬럼을 기준으로 정렬된 상태에서만 제 역할을 할 수 있음
+4. 💡 이처럼 복합 인덱스는 첫 번째 컬럼을 기준으로 정렬된 상태에서만 제 역할을 할 수 있음
    - 이를 인덱스 왼쪽 접두어 규칙(Index Left-Prefix Rule)이라고 함
    - 인덱스를 (A, B, C) 순서로 생성했다면, WHERE 조건에 다음과 같이 사용될 때 효율적
       + (A)
