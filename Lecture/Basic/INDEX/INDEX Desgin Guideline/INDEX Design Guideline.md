@@ -50,7 +50,7 @@ WHERE s.seller_name = '행복쇼핑';
 
 6. items.seller_id 에 인덱스가 있을 때
    - items.seller_id에는 외래 키 제약 조건 덕분에 인덱스가 자동으로 생성되어 있음 : 인덱스가 있을 때의 동작은 완전히 다름
-     + sellers 테이블에서 seller_name이 '행복쇼핑'인 판매자를 찾음 ( seller_id = 1 )
+     + sellers 테이블에서 seller_name이 '행복쇼핑'인 판매자를 찾음 (seller_id = 1)
      + sitems.seller_id 인덱스를 사용하여 seller_id가 1 인 상품 데이터의 위치를 곧바로 찾아냄 (풀 테이블 스캔이 사라지고 몇 번의 탐색만으로 JOIN 이 완료)
 ```sql
 EXPLAIN SELECT
