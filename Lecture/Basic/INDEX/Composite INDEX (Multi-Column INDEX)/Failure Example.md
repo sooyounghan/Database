@@ -20,8 +20,6 @@ FROM items WHERE price = 80000;
 <img src="https://github.com/user-attachments/assets/8a93b6a7-ee5f-4c0f-97a2-bb16e2647409">
 </div>
 
-<img width="584" height="121" alt="image" src="" />
-
    - (type : ALL) : 풀 테이블 스캔이 발생
    - (key : NULL) : idx_items_category_price 인덱스가 있음에도 불구하고, 옵티마이저는 이 인덱스를 사용하지 않음
      + 인덱스 왼쪽 접두어 규칙 때문에 발생
