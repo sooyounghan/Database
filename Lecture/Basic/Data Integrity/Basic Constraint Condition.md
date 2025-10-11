@@ -21,7 +21,7 @@ Error Code: 1048. Column 'email' cannot be null
 2. UNIQUE : 중복 값 방지
    - 역할 : 해당 컬럼에 들어가는 모든 값은 테이블 내에서 반드시 고유해야(unique)함, 즉, 중복 데이터가 쌓이는 것을 막음
    - 문법 예시 : email VARCHAR(255) UNIQUE
-   - 위반 시나리오 : 이미 가입된 이메일 주소('sean@example.com')로 다른 사람이 또 가입을 시도하는 상황
+   - 위반 시나리오 : 이미 가입된 이메일 주소(```'sean@example.com'```)로 다른 사람이 또 가입을 시도하는 상황
 ```sql
 -- 이메일(UNIQUE)에 중복 값을 입력 시도 (에러 발생)
 INSERT INTO users (name, email, address)
@@ -31,7 +31,7 @@ VALUES ('가짜 션', 'sean@example.com', '서울시 어딘가');
 ```
 Error Code: 1062. Duplicate entry 'sean@example.com' for key 'users.email'
 ```
-   - 데이터베이스는 'sean@example.com' 이라는 값이 users.email 키에 대해 중복되었다는 에러와 함께 INSERT를 거부
+   - 데이터베이스는 ```'sean@example.com'``` 이라는 값이 users.email 키에 대해 중복되었다는 에러와 함께 INSERT를 거부
 
 3. PRIMARY KEY (기본 키) : 행의 대표 식별자
    - 역할 : 테이블의 각 행을 고유하게 식별할 수 있는 단 하나의 대표 키로, NOT NULL과 UNIQUE 제약 조건의 특징을 모두 포함
