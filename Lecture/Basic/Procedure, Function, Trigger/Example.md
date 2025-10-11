@@ -27,11 +27,11 @@ CREATE PROCEDURE sp_change_user_address(
 )
 
 BEGIN
- -- 1. users 테이블의 주소 업데이트
- UPDATE users SET address = new_address_param WHERE user_id = user_id_param;
-
- -- 2. logs 테이블에 변경 이력 기록
- INSERT INTO logs (description) VALUES (CONCAT('User ID ', user_id_param, ' 주소 변경 ', new_address_param));
+    -- 1. users 테이블의 주소 업데이트
+    UPDATE users SET address = new_address_param WHERE user_id = user_id_param;
+   
+    -- 2. logs 테이블에 변경 이력 기록
+    INSERT INTO logs (description) VALUES (CONCAT('User ID ', user_id_param, ' 주소 변경 ', new_address_param));
 
 END //
 
@@ -44,7 +44,7 @@ DELIMITER ;
    - new_address_param : 새로 변경할 주소 값
 
    - 프로시저의 본문(BEGIN ... END)에서는 두 가지 SQL 문이 순차적으로 실행
-     + UPDATE users SET address = new_address_param WHERE user_id = user_id_param; : users 테이블에서 user_id_param에 해당하는 사용자의 주소(address)를 new_address_param 값으로 변경한다.
+     + UPDATE users SET address = new_address_param WHERE user_id = user_id_param; : users 테이블에서 user_id_param에 해당하는 사용자의 주소(address)를 new_address_param 값으로 변경
      + INSERT INTO logs (description) VALUES (CONCAT('User ID ...')); : logs 테이블에 주소 변경 이력을 삽입 (CONCAT 함수를 사용하여 로그 메시지를 동적으로 생성) : 💡 이 과정은 UPDATE가 성공적으로 수행된 후에만 실행
    - 이처럼 저장 프로시저는 여러 SQL 문을 하나의 논리적인 단위로 묶어 처리할 수 있게 해줌
 
