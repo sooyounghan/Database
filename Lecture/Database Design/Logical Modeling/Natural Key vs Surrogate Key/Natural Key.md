@@ -102,7 +102,7 @@ Error Code: 1451. Cannot delete or update a parent row: a foreign key
 constraint fails (`my_shop3`.`orders_n`, CONSTRAINT `fk_orders_member_n`
 FOREIGN KEY (`member_email`) REFERENCES `member_n` (`email`))
 ```
-   - 이 오류 메시지는 orders_n 테이블이 fk_orders_member_n라는 외래 키 제약조건을 통해 member_n 테이블의 member1@old.com 값을 참조하고 있기 때문에, member_n 테이블의 PK를 함부로 바꿀 수 없다는 뜻
+   - 이 오류 메시지는 orders_n 테이블이 fk_orders_member_n라는 외래 키 제약조건을 통해 member_n 테이블의 ```member1@old.com```값을 참조하고 있기 때문에, member_n 테이블의 PK를 함부로 바꿀 수 없다는 뜻
    - 이것이 바로 데이터베이스가 데이터의 정합성(Consistency)과 무결성(Integrity)을 지키는 방식
      + 만약 이 UPDATE가 성공했다면, 주문 데이터는 주인을 잃고 떠다니는 고아 데이터가 되었을 것
      + 데이터베이스의 기본 설정이 우리 시스템을 큰 재앙으로부터 보호해 준 것
