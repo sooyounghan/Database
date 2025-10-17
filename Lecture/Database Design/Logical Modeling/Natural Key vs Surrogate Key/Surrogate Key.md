@@ -82,7 +82,8 @@ WHERE member_id = 1;
 
    - member_s 테이블 조회 : member_s 테이블을 조회해서 이메일이 잘 변경되었는지 확인
 ```sql
-SELECT * FROM member_s;
+SELECT *
+FROM member_s;
 ```
 <div align="center">
 <img src="https://github.com/user-attachments/assets/c6f018ef-2908-44cd-8ba3-2b06c9e4633d">
