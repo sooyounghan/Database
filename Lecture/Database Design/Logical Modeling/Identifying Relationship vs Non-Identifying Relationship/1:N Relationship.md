@@ -20,6 +20,7 @@ CREATE TABLE board_non_identifying (
    title VARCHAR(255) NOT NULL,
    PRIMARY KEY (board_id)
 );
+
 CREATE TABLE comment_non_identifying (
    comment_id BIGINT NOT NULL AUTO_INCREMENT, -- 독립적인 PK
    board_id BIGINT NOT NULL, -- 일반 컬럼 + FK
