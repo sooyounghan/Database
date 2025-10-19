@@ -77,7 +77,7 @@ VALUES (100, 1, 15, 15000, 1); -- option_id 15: M 사이즈, 검은색
    - 식별 관계에선 (order_id, product_id) 자체가 PK이므로, '하나의 주문에 동일한 상품은 하나만'이라는 규칙이 PK 레벨에 딱 붙어 있음
    - 새로운 요구사항은 이 PK 제약조건을 정면으로 위반
    - 변경 작업 : 이 문제를 해결하려면 테이블의 PK, 즉 정체성 자체를 변경해야 함
-     + 테이블에 option_id 컬럼을 추가한다.
+     + 테이블에 option_id 컬럼을 추가
      + 기존의 (order_id, product_id) 복합 키(PK)를 삭제
      + option_id까지 포함된 새로운 3컬럼 복합 키(PK) (order_id, product_id, option_id)를 생성
 
