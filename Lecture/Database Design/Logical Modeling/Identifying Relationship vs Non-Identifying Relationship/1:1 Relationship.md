@@ -84,6 +84,7 @@ CREATE TABLE member_identifying (
    name VARCHAR(50) NOT NULL,
    PRIMARY KEY (member_id)
 );
+
 CREATE TABLE member_detail_identifying (
    member_id BIGINT NOT NULL, -- PK + FK
    bio TEXT NULL,
