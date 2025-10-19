@@ -109,7 +109,7 @@ WHERE board_id = 1 AND comment_no = 10 AND reply_no = 3;
      + 반면, 이 구조를 비식별 관계로 설계했다면 모든 테이블은 board_id, comment_id, reply_id 라는 단순한 단일 PK를 가졌을 것
      + 손자 테이블인 reply는 부모의 PK인 comment_id 하나만 FK로 가지면 됨 : 훨씬 더 단순하고 유연하며 관리하기 쉬운 구조
 <div align="center">
-<img src=""https://github.com/user-attachments/assets/3e4640f0-3294-4d4c-8b8c-ff6332e91a89">
+<img src="https://github.com/user-attachments/assets/3e4640f0-3294-4d4c-8b8c-ff6332e91a89">
 </div>
 
 ```sql
