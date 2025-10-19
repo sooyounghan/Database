@@ -87,6 +87,7 @@ CREATE TABLE member_identifying (
 CREATE TABLE member_detail_identifying (
    member_id BIGINT NOT NULL, -- PK + FK
    bio TEXT NULL,
+
    PRIMARY KEY (member_id),
    CONSTRAINT fk_detail_member_iden FOREIGN KEY (member_id)
    REFERENCES member_identifying (member_id)
