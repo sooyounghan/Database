@@ -88,7 +88,7 @@ FROM member_3nf;
    - 실행 결과 확인
 ```sql
 SELECT *
-FROM orders_3nf
+FROM orders_3nf;
 ```
 <div align="center">
 <img src="https://github.com/user-attachments/assets/70857df1-3fc3-4563-aff5-e19c589bdd50">
