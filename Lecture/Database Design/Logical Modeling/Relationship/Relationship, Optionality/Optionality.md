@@ -72,13 +72,13 @@ FROM member;
 DROP TABLE IF EXISTS member;
 
 CREATE TABLE member (
- member_id BIGINT NOT NULL AUTO_INCREMENT,
- team_id BIGINT NOT NULL, -- NOT NULL로 필수적 참여 구현
- name VARCHAR(50) NOT NULL,
+   member_id BIGINT NOT NULL AUTO_INCREMENT,
+   team_id BIGINT NOT NULL, -- NOT NULL로 필수적 참여 구현
+   name VARCHAR(50) NOT NULL,
 
- PRIMARY KEY (member_id),
- CONSTRAINT fk_member_team FOREIGN KEY (team_id)
- REFERENCES team (team_id)
+   PRIMARY KEY (member_id),
+   CONSTRAINT fk_member_team FOREIGN KEY (team_id)
+   REFERENCES team (team_id)
 );
 ```
    - 이제 팀 정보 없이 회원을 추가하려고 하면 데이터베이스가 오류를 발생시켜 참조 무결성을 지켜줌
