@@ -28,7 +28,7 @@ CREATE TABLE orders_1nf_violating (
    member_id INT NOT NULL,
    member_name VARCHAR(50) NOT NULL,
 
-   product_infos VARCHAR(255) NOT NULL -- 이 컬럼이 원자성을 위반한다.
+   product_infos VARCHAR(255) NOT NULL -- 이 컬럼이 원자성을 위반
 );
 
 -- 데이터 삽입
@@ -63,7 +63,7 @@ CREATE TABLE orders_1nf (
    order_quantity INT NOT NULL,
    ordered_at DATETIME NOT NULL,
 
-   PRIMARY KEY (order_id, product_id) -- 기본 키를 (order_id, product_id) 복합키로  설정
+   PRIMARY KEY (order_id, product_id) -- 기본 키를 (order_id, product_id) 복합키로 설정
 );
 
 -- 데이터 삽입
