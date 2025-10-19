@@ -71,8 +71,8 @@ VALUES (1, '항상 성장하는 개발자입니다.', 'INTJ');
 
 3. 참고 : 개방-폐쇄 원칙 (Open-Closed Principle, OCP)
    - 이 설계는 객체지향 설계 5원칙 중 하나인 OCP를 완벽하게 만족
-   - 확장에는 열려있다 (Open for extension): seller, admin_auth 와 같은 새로운 기능을 얼마든지 추가(확장)할 수 있음
-   - 수정에는 닫혀있다 (Closed for modification) : 새로운 기능이 추가되어도 핵심 테이블인 member의 코드는 수정할 필요가 없음
+   - 확장에는 열려있음 (Open for extension): seller, admin_auth 와 같은 새로운 기능을 얼마든지 추가(확장)할 수 있음
+   - 수정에는 닫혀있음 (Closed for modification) : 새로운 기능이 추가되어도 핵심 테이블인 member의 코드는 수정할 필요가 없음
    - 좋은 설계는 이처럼 변화에 유연하게 대처할 수 있어야 함
 
 4. 방법 2 : 주 테이블에 외래 키 두기
