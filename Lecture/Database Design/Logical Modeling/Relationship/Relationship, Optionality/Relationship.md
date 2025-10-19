@@ -57,16 +57,16 @@ class Member {
    // Member 객체는 어느 팀에 속했는지 모름 : Team 참조가 없음
 }
 ```
-   - Team Member 접근 O
+   - Team → Member : 접근 O
       + 이 설계에서 Team 객체는 members 리스트를 통해 소속된 Member 객체들을 알고 있음
       + 따라서 team.members 처럼 팀에서 회원으로 접근하는 것은 매우 쉬움
 
-   - Member Team 접근 X
+   - Member → Team : 접근 X
      + 하지만 반대로, 특정 Member 객체만 보면 이 회원이 어떤 Team 에 속했는지 역으로 찾아가는 것은 불가능
       + Member 객체는 Team 에 대한 참조를 가지고 있지 않기 때문임
 
    - 이것이 바로 방향이 있는 단방향 관계
-   - 만약 Member Team의 접근이 필요하다면 다음과 같이 Member -> Team 으로 접근할 수 있는 코드를 추가
+   - 만약 Member → Team의 접근이 필요하다면 다음과 같이 Member → Team 으로 접근할 수 있는 코드를 추가
 ```java
 class Member {
    Long memberId;
