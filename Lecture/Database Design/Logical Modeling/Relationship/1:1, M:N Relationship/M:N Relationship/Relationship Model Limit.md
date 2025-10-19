@@ -81,11 +81,11 @@
      + 자바(Java) 예시 : 자바와 같은 객체지향 언어는 다대다 관계를 매우 직관적으로 표현할 수 있음
  ```java
 class Order {
-     List<Product> products; // 주문은 상품 목록을 가진다.
+     List<Product> products; // 주문은 상품 목록을 가짐
 }
 
 class Product {
-     List<Order> orders; // 상품은 주문 목록을 가진다.
+     List<Order> orders; // 상품은 주문 목록을 가짐
 }
 ```
    - 각 객체가 상대방 객체의 '목록(List)'을 직접 참조하
