@@ -29,7 +29,7 @@
 
    - 후보 키 분석
      + {student_id, lecture_name}은 모든 컬럼을 결정하므로 후보 키가 될 수 있음
-     + {student_id, professor_name} 은 어떨까? 학생 ID와 교수 이름을 알면 lecture_name 도 알 수 있으므로(professor_name → lecture_name), 이 조합 역시 후보 키가 될 수 있음
+     + {student_id, professor_name}은 어떨까? 학생 ID와 교수 이름을 알면 lecture_name도 알 수 있으므로(professor_name → lecture_name), 이 조합 역시 후보 키가 될 수 있음
 
 4. 이 테이블에는 두 개의 후보 키가 존재 : 우리는 (student_id, lecture_name) 을 기본 키(PK)로 선택했다고 가정
    - 정규형 만족 여부 확인
@@ -44,7 +44,7 @@
         * {student_id, lecture_name}는 professor_name을 결정 : 이 결정자는 기본 키이므로 후보 키 (OK)
         * professor_name은 lecture_name을 결정 : 이 결정자( professor_name )는 후보 키가 아님
         * professor_name만으로는 행을 유일하게 식별할 수 없기 때문에 후보 키가 아님
-        * 따라서 BCNF를 위
+        * 따라서 BCNF를 위반
 
 5. BCNF를 위반했을 때의 문제점
    - 제 3 정규형까지 만족했는데 문제가 되는 이유 : professor_name이 lecture_name을 결정하는 종속성 때문에 여전히 데이터 이상 현상이 발생
