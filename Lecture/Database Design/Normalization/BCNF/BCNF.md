@@ -10,7 +10,7 @@
    - 기본 키는 여러 후보 키 중 하나를 선택한 것
    - 제3 정규형은 기본 키가 아닌 컬럼들 사이의 종속 관계(이행적 종속)만 제거
    - 반면 BCNF는 더 엄격해서, 기본 키가 아니더라도 어떤 컬럼이 다른 컬럼을 결정한다면, 그 결정자는 반드시 후보 키여야 한다는 규칙
-   - 대부분의 경우 제 3 정규형을 만족하면 BCNF도 만족 : 하지만 아주 드물게 제3 정규형은 만족하지만 BCNF는 만족하지 않는 경우가 존재
+   - 대부분의 경우 제 3 정규형을 만족하면 BCNF도 만족 : 하지만 아주 드물게 제 3 정규형은 만족하지만 BCNF는 만족하지 않는 경우가 존재
 
 3. BCNF가 필요한 이유: 3NF의 한계
    - BCNF를 설명할 때 자주 사용하는 전통적인 학교 수강 신청 예시를 사용
@@ -96,19 +96,19 @@ DROP TABLE IF EXISTS professor_bcnf;
 
 -- 1. professor 테이블 생성 (교수와 담당 특강 정보)
 CREATE TABLE professor_bcnf (
- professor_name VARCHAR(50) NOT NULL,
- lecture_name VARCHAR(50) NOT NULL,
-
- PRIMARY KEY (professor_name)
+    professor_name VARCHAR(50) NOT NULL,
+    lecture_name VARCHAR(50) NOT NULL,
+   
+    PRIMARY KEY (professor_name)
 );
 
 -- 2. enrollment 테이블 생성 (수강 신청 정보)
 CREATE TABLE enrollment_bcnf (
- student_id INT NOT NULL,
- professor_name VARCHAR(50) NOT NULL,
-
- PRIMARY KEY (student_id, professor_name),
- FOREIGN KEY (professor_name) REFERENCES professor_bcnf (professor_name)
+    student_id INT NOT NULL,
+    professor_name VARCHAR(50) NOT NULL,
+   
+    PRIMARY KEY (student_id, professor_name),
+    FOREIGN KEY (professor_name) REFERENCES professor_bcnf (professor_name)
 );
 ```
 
