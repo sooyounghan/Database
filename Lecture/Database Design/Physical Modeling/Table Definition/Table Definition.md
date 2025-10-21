@@ -13,7 +13,7 @@ CREATE TABLE order_item (
    price INT NOT NULL,
    qty INT NOT NULL,
 
-  PRIMARY KEY (oi_id)
+   PRIMARY KEY (oi_id)
 );
 ```
    - 이 DDL만 보고 다음 질문에 바로 답할 수 있는가?
