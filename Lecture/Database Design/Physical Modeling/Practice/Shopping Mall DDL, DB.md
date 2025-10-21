@@ -207,7 +207,7 @@ CREATE TABLE order_item (
 
 -- 5. delivery 테이블
 CREATE TABLE delivery (
-     delivery_id BIGINT NTO NULL AUTO_INCREMENT, -- 배송 ID (PK)
+     delivery_id BIGINT NOT NULL AUTO_INCREMENT, -- 배송 ID (PK)
      order_id BIGINT NOT NULL, -- 주문 ID (FK, Unique)
      delivery_status VARCHAR(20) NOT NULL DEFAULT 'READY',-- 배송 상태
      tracking_no VARCHAR(50) NULL, -- 운송장 번호
