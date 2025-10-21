@@ -19,8 +19,8 @@ WHERE login_id = 'user123';
 
 -- 이메일로 회원 정보 찾기
 SELECT member_id
-FROM member WHERE
-email = 'user123@example.com';
+FROM member
+WHERE email = 'user123@example.com';
 ```
    - 문제점 : member 테이블에 회원이 100만 명 있다면, 이 쿼리는 100만 개의 데이터를 모두 스캔(Full Table Scan)해야 함
    - 해결책 : login_id와 email컬럼은 UNIQUE 제약조건을 걸어두었는데, MySQL에서 UNIQUE 제약조건은 자동으로 해당 컬럼에 고유 인덱스(Unique Index)를 생성
@@ -46,9 +46,9 @@ CREATE INDEX idx_member_id
 ON orders (member_id);
 ```
    - 실무 팁
-    + MySQL에서는 외래 키(Foreign Key)를 생성하면 해당 컬럼에 자동으로 인덱스가 생성
-    + 따라서 orders.member_id는 사실 FK 제약조건을 거는 순간 인덱스가 이미 만들어짐
-    + 하지만 FK 제약조건을 사용하지 않는 경우 반드시 인덱스를 직접 추가해야 함
+     + MySQL에서는 외래 키(Foreign Key)를 생성하면 해당 컬럼에 자동으로 인덱스가 생성
+     + 따라서 orders.member_id는 사실 FK 제약조건을 거는 순간 인덱스가 이미 만들어짐
+     + 하지만 FK 제약조건을 사용하지 않는 경우 반드시 인덱스를 직접 추가해야 함
 
 5. 시나리오 3 : 상품명으로 상품 검색
    - 사용자가 쇼핑몰 상단의 검색창에 '노트북'이라고 입력하여 상품을 검색
